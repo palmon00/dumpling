@@ -1,0 +1,472 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1E86A26E18E22C5A00DEAFF8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E86A26D18E22C5A00DEAFF8 /* Foundation.framework */; };
+		1E86A27018E22C5A00DEAFF8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E86A26F18E22C5A00DEAFF8 /* CoreGraphics.framework */; };
+		1E86A27218E22C5A00DEAFF8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E86A27118E22C5A00DEAFF8 /* UIKit.framework */; };
+		1E86A27818E22C5A00DEAFF8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1E86A27618E22C5A00DEAFF8 /* InfoPlist.strings */; };
+		1E86A27A18E22C5A00DEAFF8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E86A27918E22C5A00DEAFF8 /* main.m */; };
+		1E86A27E18E22C5A00DEAFF8 /* GNRAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E86A27D18E22C5A00DEAFF8 /* GNRAppDelegate.m */; };
+		1E86A28118E22C5A00DEAFF8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E86A27F18E22C5A00DEAFF8 /* Main.storyboard */; };
+		1E86A28418E22C5A00DEAFF8 /* GNRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E86A28318E22C5A00DEAFF8 /* GNRViewController.m */; };
+		1E86A28618E22C5A00DEAFF8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E86A28518E22C5A00DEAFF8 /* Images.xcassets */; };
+		1E86A28D18E22C5A00DEAFF8 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E86A28C18E22C5A00DEAFF8 /* XCTest.framework */; };
+		1E86A28E18E22C5A00DEAFF8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E86A26D18E22C5A00DEAFF8 /* Foundation.framework */; };
+		1E86A28F18E22C5A00DEAFF8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E86A27118E22C5A00DEAFF8 /* UIKit.framework */; };
+		1E86A29718E22C5A00DEAFF8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1E86A29518E22C5A00DEAFF8 /* InfoPlist.strings */; };
+		1E86A29918E22C5A00DEAFF8 /* DumplingsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E86A29818E22C5A00DEAFF8 /* DumplingsTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1E86A29018E22C5A00DEAFF8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1E86A26218E22C5A00DEAFF8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1E86A26918E22C5A00DEAFF8;
+			remoteInfo = Dumplings;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1E86A26A18E22C5A00DEAFF8 /* Dumplings.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dumplings.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1E86A26D18E22C5A00DEAFF8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1E86A26F18E22C5A00DEAFF8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		1E86A27118E22C5A00DEAFF8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		1E86A27518E22C5A00DEAFF8 /* Dumplings-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Dumplings-Info.plist"; sourceTree = "<group>"; };
+		1E86A27718E22C5A00DEAFF8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1E86A27918E22C5A00DEAFF8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1E86A27B18E22C5A00DEAFF8 /* Dumplings-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Dumplings-Prefix.pch"; sourceTree = "<group>"; };
+		1E86A27C18E22C5A00DEAFF8 /* GNRAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GNRAppDelegate.h; sourceTree = "<group>"; };
+		1E86A27D18E22C5A00DEAFF8 /* GNRAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GNRAppDelegate.m; sourceTree = "<group>"; };
+		1E86A28018E22C5A00DEAFF8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1E86A28218E22C5A00DEAFF8 /* GNRViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GNRViewController.h; sourceTree = "<group>"; };
+		1E86A28318E22C5A00DEAFF8 /* GNRViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GNRViewController.m; sourceTree = "<group>"; };
+		1E86A28518E22C5A00DEAFF8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		1E86A28B18E22C5A00DEAFF8 /* DumplingsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DumplingsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1E86A28C18E22C5A00DEAFF8 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		1E86A29418E22C5A00DEAFF8 /* DumplingsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DumplingsTests-Info.plist"; sourceTree = "<group>"; };
+		1E86A29618E22C5A00DEAFF8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1E86A29818E22C5A00DEAFF8 /* DumplingsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DumplingsTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1E86A26718E22C5A00DEAFF8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1E86A27018E22C5A00DEAFF8 /* CoreGraphics.framework in Frameworks */,
+				1E86A27218E22C5A00DEAFF8 /* UIKit.framework in Frameworks */,
+				1E86A26E18E22C5A00DEAFF8 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1E86A28818E22C5A00DEAFF8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1E86A28D18E22C5A00DEAFF8 /* XCTest.framework in Frameworks */,
+				1E86A28F18E22C5A00DEAFF8 /* UIKit.framework in Frameworks */,
+				1E86A28E18E22C5A00DEAFF8 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1E86A26118E22C5A00DEAFF8 = {
+			isa = PBXGroup;
+			children = (
+				1E86A27318E22C5A00DEAFF8 /* Dumplings */,
+				1E86A29218E22C5A00DEAFF8 /* DumplingsTests */,
+				1E86A26C18E22C5A00DEAFF8 /* Frameworks */,
+				1E86A26B18E22C5A00DEAFF8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1E86A26B18E22C5A00DEAFF8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1E86A26A18E22C5A00DEAFF8 /* Dumplings.app */,
+				1E86A28B18E22C5A00DEAFF8 /* DumplingsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1E86A26C18E22C5A00DEAFF8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1E86A26D18E22C5A00DEAFF8 /* Foundation.framework */,
+				1E86A26F18E22C5A00DEAFF8 /* CoreGraphics.framework */,
+				1E86A27118E22C5A00DEAFF8 /* UIKit.framework */,
+				1E86A28C18E22C5A00DEAFF8 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1E86A27318E22C5A00DEAFF8 /* Dumplings */ = {
+			isa = PBXGroup;
+			children = (
+				1E86A27C18E22C5A00DEAFF8 /* GNRAppDelegate.h */,
+				1E86A27D18E22C5A00DEAFF8 /* GNRAppDelegate.m */,
+				1E86A27F18E22C5A00DEAFF8 /* Main.storyboard */,
+				1E86A28218E22C5A00DEAFF8 /* GNRViewController.h */,
+				1E86A28318E22C5A00DEAFF8 /* GNRViewController.m */,
+				1E86A28518E22C5A00DEAFF8 /* Images.xcassets */,
+				1E86A27418E22C5A00DEAFF8 /* Supporting Files */,
+			);
+			path = Dumplings;
+			sourceTree = "<group>";
+		};
+		1E86A27418E22C5A00DEAFF8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1E86A27518E22C5A00DEAFF8 /* Dumplings-Info.plist */,
+				1E86A27618E22C5A00DEAFF8 /* InfoPlist.strings */,
+				1E86A27918E22C5A00DEAFF8 /* main.m */,
+				1E86A27B18E22C5A00DEAFF8 /* Dumplings-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1E86A29218E22C5A00DEAFF8 /* DumplingsTests */ = {
+			isa = PBXGroup;
+			children = (
+				1E86A29818E22C5A00DEAFF8 /* DumplingsTests.m */,
+				1E86A29318E22C5A00DEAFF8 /* Supporting Files */,
+			);
+			path = DumplingsTests;
+			sourceTree = "<group>";
+		};
+		1E86A29318E22C5A00DEAFF8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1E86A29418E22C5A00DEAFF8 /* DumplingsTests-Info.plist */,
+				1E86A29518E22C5A00DEAFF8 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1E86A26918E22C5A00DEAFF8 /* Dumplings */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1E86A29C18E22C5A00DEAFF8 /* Build configuration list for PBXNativeTarget "Dumplings" */;
+			buildPhases = (
+				1E86A26618E22C5A00DEAFF8 /* Sources */,
+				1E86A26718E22C5A00DEAFF8 /* Frameworks */,
+				1E86A26818E22C5A00DEAFF8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Dumplings;
+			productName = Dumplings;
+			productReference = 1E86A26A18E22C5A00DEAFF8 /* Dumplings.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1E86A28A18E22C5A00DEAFF8 /* DumplingsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1E86A29F18E22C5A00DEAFF8 /* Build configuration list for PBXNativeTarget "DumplingsTests" */;
+			buildPhases = (
+				1E86A28718E22C5A00DEAFF8 /* Sources */,
+				1E86A28818E22C5A00DEAFF8 /* Frameworks */,
+				1E86A28918E22C5A00DEAFF8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1E86A29118E22C5A00DEAFF8 /* PBXTargetDependency */,
+			);
+			name = DumplingsTests;
+			productName = DumplingsTests;
+			productReference = 1E86A28B18E22C5A00DEAFF8 /* DumplingsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1E86A26218E22C5A00DEAFF8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = GNR;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Raymond Louie";
+				TargetAttributes = {
+					1E86A28A18E22C5A00DEAFF8 = {
+						TestTargetID = 1E86A26918E22C5A00DEAFF8;
+					};
+				};
+			};
+			buildConfigurationList = 1E86A26518E22C5A00DEAFF8 /* Build configuration list for PBXProject "Dumplings" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1E86A26118E22C5A00DEAFF8;
+			productRefGroup = 1E86A26B18E22C5A00DEAFF8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1E86A26918E22C5A00DEAFF8 /* Dumplings */,
+				1E86A28A18E22C5A00DEAFF8 /* DumplingsTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1E86A26818E22C5A00DEAFF8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1E86A28618E22C5A00DEAFF8 /* Images.xcassets in Resources */,
+				1E86A27818E22C5A00DEAFF8 /* InfoPlist.strings in Resources */,
+				1E86A28118E22C5A00DEAFF8 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1E86A28918E22C5A00DEAFF8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1E86A29718E22C5A00DEAFF8 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1E86A26618E22C5A00DEAFF8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1E86A27E18E22C5A00DEAFF8 /* GNRAppDelegate.m in Sources */,
+				1E86A28418E22C5A00DEAFF8 /* GNRViewController.m in Sources */,
+				1E86A27A18E22C5A00DEAFF8 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1E86A28718E22C5A00DEAFF8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1E86A29918E22C5A00DEAFF8 /* DumplingsTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1E86A29118E22C5A00DEAFF8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1E86A26918E22C5A00DEAFF8 /* Dumplings */;
+			targetProxy = 1E86A29018E22C5A00DEAFF8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1E86A27618E22C5A00DEAFF8 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1E86A27718E22C5A00DEAFF8 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		1E86A27F18E22C5A00DEAFF8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1E86A28018E22C5A00DEAFF8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		1E86A29518E22C5A00DEAFF8 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1E86A29618E22C5A00DEAFF8 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1E86A29A18E22C5A00DEAFF8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		1E86A29B18E22C5A00DEAFF8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1E86A29D18E22C5A00DEAFF8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Dumplings/Dumplings-Prefix.pch";
+				INFOPLIST_FILE = "Dumplings/Dumplings-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		1E86A29E18E22C5A00DEAFF8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Dumplings/Dumplings-Prefix.pch";
+				INFOPLIST_FILE = "Dumplings/Dumplings-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		1E86A2A018E22C5A00DEAFF8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Dumplings.app/Dumplings";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Dumplings/Dumplings-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "DumplingsTests/DumplingsTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		1E86A2A118E22C5A00DEAFF8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Dumplings.app/Dumplings";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Dumplings/Dumplings-Prefix.pch";
+				INFOPLIST_FILE = "DumplingsTests/DumplingsTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1E86A26518E22C5A00DEAFF8 /* Build configuration list for PBXProject "Dumplings" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1E86A29A18E22C5A00DEAFF8 /* Debug */,
+				1E86A29B18E22C5A00DEAFF8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1E86A29C18E22C5A00DEAFF8 /* Build configuration list for PBXNativeTarget "Dumplings" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1E86A29D18E22C5A00DEAFF8 /* Debug */,
+				1E86A29E18E22C5A00DEAFF8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		1E86A29F18E22C5A00DEAFF8 /* Build configuration list for PBXNativeTarget "DumplingsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1E86A2A018E22C5A00DEAFF8 /* Debug */,
+				1E86A2A118E22C5A00DEAFF8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1E86A26218E22C5A00DEAFF8 /* Project object */;
+}
