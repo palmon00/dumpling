@@ -65,13 +65,13 @@
         if (node.position.y > CGRectGetHeight(self.frame) + node.frame.size.height) [node removeFromParent];
         else {
             // Move note up screen
-            CGPoint newPosition = CGPointMake(node.position.x, node.position.y + 1);
+            CGPoint newPosition = CGPointMake(node.position.x, node.position.y + NOTE_SPEED);
             node.position = newPosition;
         }
     }];
     
     // Add a random note once in a while
-    if (!(arc4random() % 100)) [self addChild:[self randomNote]];
+    if (!(arc4random() % NOTE_RARITY)) [self addChild:[self randomNote]];
 }
 
 -(SKSpriteNode *)randomNote
@@ -126,9 +126,11 @@
     else feedback.text = @"Miss!";
     feedback.fontSize = 42;
     feedback.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame));
-    SKAction *fadeAway = [SKAction fadeOutWithDuration:0.25];
+    SKAction *fadeAway = [SKAction fadeOutWithDuration:0.5];
+    SKAction *moveUp = [SKAction moveByX:0 y:100 duration:0.5];
+    SKAction *fadeMove = [SKAction group:@[fadeAway, moveUp]];
     SKAction *remove = [SKAction removeFromParent];
-    SKAction *fadeSequence = [SKAction sequence:@[fadeAway, remove]];
+    SKAction *fadeSequence = [SKAction sequence:@[fadeMove, remove]];
     [self addChild:feedback];
     [feedback runAction:fadeSequence];
 }

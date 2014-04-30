@@ -9,6 +9,8 @@
 #import <SpriteKit/SpriteKit.h>
 
 #define ERROR_MARGIN 20
+#define NOTE_SPEED 3
+#define NOTE_RARITY 50
 
 @interface EBRMyScene : SKScene
 
