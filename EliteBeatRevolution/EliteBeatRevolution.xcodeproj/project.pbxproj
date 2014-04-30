@@ -561,6 +561,7 @@
 				1E2DD2231910B4A4000F196A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1E2DD2241910B4A4000F196A /* Build configuration list for PBXNativeTarget "EliteBeatRevolutionTests" */ = {
 			isa = XCConfigurationList;
@@ -569,6 +570,7 @@
 				1E2DD2261910B4A4000F196A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
