@@ -26,10 +26,10 @@
         EBRReceptor *rightReceptor = [EBRReceptor spriteNodeWithImageNamed:@"Right Receptor.png"];
         EBRReceptor *upReceptor = [EBRReceptor spriteNodeWithImageNamed:@"Up Receptor.png"];
         
-        leftReceptor.position = CGPointMake(CGRectGetWidth(self.frame)/5, 9*CGRectGetHeight(self.frame)/10);
-        downReceptor.position = CGPointMake(2*CGRectGetWidth(self.frame)/5, 9*CGRectGetHeight(self.frame)/10);
-        upReceptor.position = CGPointMake(3*CGRectGetWidth(self.frame)/5, 9*CGRectGetHeight(self.frame)/10);
-        rightReceptor.position = CGPointMake(4*CGRectGetWidth(self.frame)/5, 9*CGRectGetHeight(self.frame)/10);
+        leftReceptor.position = CGPointMake(CGRectGetWidth(self.frame)/5, 1*CGRectGetHeight(self.frame)/10);
+        downReceptor.position = CGPointMake(2*CGRectGetWidth(self.frame)/5, 1*CGRectGetHeight(self.frame)/10);
+        upReceptor.position = CGPointMake(3*CGRectGetWidth(self.frame)/5, 1*CGRectGetHeight(self.frame)/10);
+        rightReceptor.position = CGPointMake(4*CGRectGetWidth(self.frame)/5, 1*CGRectGetHeight(self.frame)/10);
         
         [self addChild:leftReceptor];
         [self addChild:downReceptor];
@@ -62,10 +62,10 @@
 
     [self enumerateChildNodesWithName:@"note" usingBlock:^(SKNode *node, BOOL *stop) {
         // Remove notes above top of screen
-        if (node.position.y > CGRectGetHeight(self.frame) + node.frame.size.height) [node removeFromParent];
+        if (node.position.y < 0 - node.frame.size.height) [node removeFromParent];
         else {
-            // Move note up screen
-            CGPoint newPosition = CGPointMake(node.position.x, node.position.y + NOTE_SPEED);
+            // Move note down screen
+            CGPoint newPosition = CGPointMake(node.position.x, node.position.y - NOTE_SPEED);
             node.position = newPosition;
         }
     }];
@@ -83,19 +83,19 @@
     switch (randomNoteType) {
         case 0:
             randomNote = [SKSpriteNode spriteNodeWithImageNamed:@"Left.gif"];
-            randomNote.position = CGPointMake(CGRectGetWidth(self.frame)/5, 1*CGRectGetHeight(self.frame)/10);
+            randomNote.position = CGPointMake(CGRectGetWidth(self.frame)/5, 9*CGRectGetHeight(self.frame)/10);
             break;
         case 1:
             randomNote = [SKSpriteNode spriteNodeWithImageNamed:@"Down.gif"];
-            randomNote.position = CGPointMake(2*CGRectGetWidth(self.frame)/5, 1*CGRectGetHeight(self.frame)/10);
+            randomNote.position = CGPointMake(2*CGRectGetWidth(self.frame)/5, 9*CGRectGetHeight(self.frame)/10);
             break;
         case 2:
             randomNote = [SKSpriteNode spriteNodeWithImageNamed:@"Up.gif"];
-            randomNote.position = CGPointMake(3*CGRectGetWidth(self.frame)/5, 1*CGRectGetHeight(self.frame)/10);
+            randomNote.position = CGPointMake(3*CGRectGetWidth(self.frame)/5, 9*CGRectGetHeight(self.frame)/10);
             break;
         case 3:
             randomNote = [SKSpriteNode spriteNodeWithImageNamed:@"Right.gif"];
-            randomNote.position = CGPointMake(4*CGRectGetWidth(self.frame)/5, 1*CGRectGetHeight(self.frame)/10);
+            randomNote.position = CGPointMake(4*CGRectGetWidth(self.frame)/5, 9*CGRectGetHeight(self.frame)/10);
             break;
         default:
             break;
