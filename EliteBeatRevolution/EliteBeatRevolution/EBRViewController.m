@@ -8,24 +8,84 @@
 
 #import "EBRViewController.h"
 #import "EBRMyScene.h"
+#import "MIDIPlayer.h"
+
+@interface EBRViewController ()
+
+@property (strong, nonatomic) EBRMyScene *myScene;
+@property (strong, nonatomic) MIDIPlayer *notePlayer;
+@property (strong, nonatomic) MIDIPlayer *soundPlayer;
+
+@end
 
 @implementation EBRViewController
+
+
+
+-(MIDIPlayer *)notePlayer
+{
+    if (!_notePlayer) _notePlayer = [[MIDIPlayer alloc] init];
+    return _notePlayer;
+}
+
+-(MIDIPlayer *)soundPlayer
+{
+    if (!_soundPlayer) _soundPlayer = [[MIDIPlayer alloc] init];
+    return _soundPlayer;
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 
     // Configure the view.
-    SKView * skView = (SKView *)self.view;
+    SKView *skView = (SKView *)self.view;
     skView.showsFPS = YES;
     skView.showsNodeCount = YES;
     
-    // Create and configure the scene.
-    SKScene * scene = [EBRMyScene sceneWithSize:skView.bounds.size];
-    scene.scaleMode = SKSceneScaleModeAspectFill;
+    // Create and configure myScene.
+    self.myScene = [EBRMyScene sceneWithSize:skView.bounds.size];
+    self.myScene.scaleMode = SKSceneScaleModeAspectFill;
     
     // Present the scene.
-    [skView presentScene:scene];
+    [skView presentScene:self.myScene];
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    // Launch Note Generating MIDI Player asynchronously
+    [self launchNotePlayer];
+    
+    // FOR DEBUGGING!
+//    [self launchSoundPlayer];
+    
+    // Wait and then launch Sound Generating MIDI Player asynchronously
+//    [self performSelector:@selector(launchSoundPlayer) withObject:nil afterDelay:2];
+}
+
+-(void)launchNotePlayer
+{
+    dispatch_queue_t noteQueue = dispatch_queue_create("noteQueue", NULL);
+    dispatch_async(noteQueue, ^{
+        self.notePlayer.delegate = self.myScene;
+        self.myScene.delegate = self.notePlayer;
+        
+        NSLog(@"%@ %@", self.notePlayer.delegate, self.myScene.delegate);
+        [self.notePlayer midiPlay];
+    });
+}
+
+-(void)launchSoundPlayer
+{
+    dispatch_queue_t soundQueue = dispatch_queue_create("soundQueue", NULL);
+    dispatch_async(soundQueue, ^{
+//        self.soundPlayer.delegate = nil;
+        self.soundPlayer.delegate = self.myScene; // for DEBUGGING!
+        self.myScene.delegate = self.soundPlayer;
+        [self.soundPlayer midiPlay];
+    });
 }
 
 - (BOOL)shouldAutorotate
