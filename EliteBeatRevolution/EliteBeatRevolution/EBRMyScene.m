@@ -8,15 +8,22 @@
 
 #import "EBRMyScene.h"
 #import "EBRReceptor.h"
-#import "MIDIPlayer.h"
+#import "EBRSpriteNode.h"
 
-@interface EBRMyScene () <EBRReceptorDelegate, MIDIPlayerDelegate>
+@interface EBRMyScene () <EBRReceptorDelegate>
 
 @property (nonatomic) BOOL shouldAddNote;
+@property (strong, nonatomic) NSMutableArray *notesToAdd; // of EBRSpriteNode
 
 @end
 
 @implementation EBRMyScene
+
+-(NSMutableArray *)notesToAdd
+{
+    if (!_notesToAdd) _notesToAdd = [[NSMutableArray alloc] init];
+    return _notesToAdd;
+}
 
 -(id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
@@ -67,8 +74,23 @@
     /* Called before each frame is rendered */
 
     [self enumerateChildNodesWithName:@"note" usingBlock:^(SKNode *node, BOOL *stop) {
-        // Remove notes from bottom of screen
-        if (node.position.y < 0 - node.frame.size.height) [node removeFromParent];
+        
+        // Remove notes under buttons
+        if (node.position.y <= 1*CGRectGetHeight(self.frame)/10) {
+            EBRSpriteNode *ebrSpriteNode = (EBRSpriteNode *)node;
+            
+            // Play the note if it is note visible
+            if (!ebrSpriteNode.visibility) {
+                // Let's play the music asynchronously
+//                dispatch_queue_t playQueue = dispatch_queue_create("playQueue", NULL);
+//                dispatch_async(playQueue, ^{
+                    [self.delegate playNote:ebrSpriteNode.note withStatus:ebrSpriteNode.midiStatus andVelocity:ebrSpriteNode.velocity andPlayer:ebrSpriteNode.player];
+//                });
+            }
+            
+            // Remove the note
+            [node removeFromParent];
+        }
         else {
             // Move note down screen
             CGPoint newPosition = CGPointMake(node.position.x, node.position.y - NOTE_SPEED);
@@ -76,46 +98,68 @@
         }
     }];
     
-    // Only add a note at end of update cycle
-    if (self.shouldAddNote) {
-        [self addChild:[self randomNote]];
-        self.shouldAddNote = NO;
+    // Only add a notes at end of update cycle
+    NSArray *currentNotesToAdd = [self.notesToAdd copy];
+    for (EBRSpriteNode *spriteNode in currentNotesToAdd) {
+        [self addChild:spriteNode];
+        [self.notesToAdd removeObject:spriteNode];
     }
 }
 
--(void)showNote:(int)note AtOctave:(int)octave
+
+-(void) showNote:(char)note withStatus:(char)midiStatus andVelocity:(char)velocity andVisibility:(BOOL)visibility andPlayer:(AudioUnit)player
 {
-    // Request to add a random note
-    self.shouldAddNote = YES;
+//    NSLog(@"Adding note!");
+    [self.notesToAdd addObject:[self randomNote:note withStatus:midiStatus andVelocity:velocity andVisibility:visibility andPlayer:(AudioUnit)player]];
 }
 
--(SKSpriteNode *)randomNote
+-(EBRSpriteNode *)randomNote:(char)note withStatus:(char)midiStatus andVelocity:(char)velocity andVisibility:(BOOL)visibility andPlayer:(AudioUnit)player
 {
     // Add a random note in a random position
-    SKSpriteNode *randomNote = nil;
+    EBRSpriteNode *randomNote = nil;
     
     int randomNoteType = arc4random() % 4;
     switch (randomNoteType) {
         case 0:
-            randomNote = [SKSpriteNode spriteNodeWithImageNamed:@"Left.gif"];
+            if (visibility) randomNote = [EBRSpriteNode spriteNodeWithImageNamed:@"Left.gif"];
+            else randomNote = [[EBRSpriteNode alloc] init];
             randomNote.position = CGPointMake(CGRectGetWidth(self.frame)/5, CGRectGetHeight(self.frame)*.5);
             break;
         case 1:
-            randomNote = [SKSpriteNode spriteNodeWithImageNamed:@"Down.gif"];
+            if (visibility) randomNote = [EBRSpriteNode spriteNodeWithImageNamed:@"Down.gif"];
+            else randomNote = [[EBRSpriteNode alloc] init];
             randomNote.position = CGPointMake(2*CGRectGetWidth(self.frame)/5, CGRectGetHeight(self.frame)*.5);
             break;
         case 2:
-            randomNote = [SKSpriteNode spriteNodeWithImageNamed:@"Up.gif"];
+            if (visibility) randomNote = [EBRSpriteNode spriteNodeWithImageNamed:@"Up.gif"];
+            else randomNote = [[EBRSpriteNode alloc] init];
             randomNote.position = CGPointMake(3*CGRectGetWidth(self.frame)/5, CGRectGetHeight(self.frame)*.5);
             break;
         case 3:
-            randomNote = [SKSpriteNode spriteNodeWithImageNamed:@"Right.gif"];
+            if (visibility) randomNote = [EBRSpriteNode spriteNodeWithImageNamed:@"Left.gif"];
+            else randomNote = [[EBRSpriteNode alloc] init];
             randomNote.position = CGPointMake(4*CGRectGetWidth(self.frame)/5, CGRectGetHeight(self.frame)*.5);
             break;
         default:
             break;
     }
-    randomNote.name = @"note";
+    
+    if (visibility) {
+        randomNote.name = @"note";
+        randomNote.note = note;
+        randomNote.midiStatus = midiStatus;
+        randomNote.velocity = velocity;
+        randomNote.player = player;
+        randomNote.visibility = YES;
+    }
+    else {
+        randomNote.name = @"note";
+        randomNote.note = note;
+        randomNote.midiStatus = midiStatus;
+        randomNote.velocity = velocity;
+        randomNote.player = player;
+        randomNote.visibility = NO;
+    }
     return randomNote;
 }
 

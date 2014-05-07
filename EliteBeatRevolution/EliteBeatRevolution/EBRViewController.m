@@ -70,6 +70,9 @@
     dispatch_queue_t noteQueue = dispatch_queue_create("noteQueue", NULL);
     dispatch_async(noteQueue, ^{
         self.notePlayer.delegate = self.myScene;
+        self.myScene.delegate = self.notePlayer;
+        
+        NSLog(@"%@ %@", self.notePlayer.delegate, self.myScene.delegate);
         [self.notePlayer midiPlay];
     });
 }
@@ -80,6 +83,7 @@
     dispatch_async(soundQueue, ^{
 //        self.soundPlayer.delegate = nil;
         self.soundPlayer.delegate = self.myScene; // for DEBUGGING!
+        self.myScene.delegate = self.soundPlayer;
         [self.soundPlayer midiPlay];
     });
 }

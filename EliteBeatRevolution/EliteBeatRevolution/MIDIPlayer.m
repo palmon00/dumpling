@@ -7,8 +7,9 @@
 //
 
 #import "MIDIPlayer.h"
+#import "EBRMyScene.h"
 
-@interface MIDIPlayer ()
+@interface MIDIPlayer () <EBRMySceneDelegate>
 
 @property (readwrite) AUGraph   processingGraph;
 @property (readwrite) AudioUnit samplerUnit;
@@ -111,6 +112,11 @@ static void MyMIDIReadProc(const MIDIPacketList *pktlist,
     int noteNumber = -1;
     int octave = -1;
     
+    // Export variables
+    char exNote = '0';
+    char exMidiStatus = '0';
+    char exVelocity = '0';
+    
     MIDIPacket *packet = (MIDIPacket *)pktlist->packet;
     for (int i=0; i < pktlist->numPackets; i++) {
         
@@ -166,17 +172,16 @@ static void MyMIDIReadProc(const MIDIPacketList *pktlist,
                 default:
                     break;
             }
-//            NSLog(@"%@: %d", noteType, octave);
             
-            OSStatus result = noErr;
-//            if (!midiPlayer.delegate) {
-                // Play music
+            // Export all notes to be played invisibly
+            exNote = (char)note;
+            exMidiStatus = (char)midiStatus;
+            exVelocity = (char)velocity;
             
-            // Play all notes
-            result = MusicDeviceMIDIEvent (player, midiStatus, note, velocity, 0);
-
-            // Show only channel MIDI_CHANNEL
-            if ((int)controller == 3) {
+            [midiPlayer.delegate showNote:exNote withStatus:exMidiStatus andVelocity:exVelocity andVisibility:NO andPlayer:player];
+            
+            // Export only MIDI_CHANNEL notes as visible
+            if ((int)controller == MIDI_CHANNEL) {
                 // Play note if velocity is non zero
                 if ((int)velocity > 0) showNote = YES;
                 
@@ -184,30 +189,27 @@ static void MyMIDIReadProc(const MIDIPacketList *pktlist,
                 for (int i = 0; i < packet->length; i++) {
                     packetData = [packetData stringByAppendingFormat:@"%02X ", packet->data[i]];
                 }
-                NSLog(@"PacketData: '%@'", packetData);
+                // NSLog(@"PacketData: '%@'", packetData);
             }
-
-//            }
-//        } else {
+            
         }
-//        NSString *packetData = @"";
-//        for (int i = 0; i < packet->length; i++) {
-//            packetData = [packetData stringByAppendingFormat:@"%02X ", packet->data[i]];
-//        }
-//        NSLog(@"PacketData: '%@'", packetData);
-//        }
-//        }
-        // Send a note event
-//        if (noteNumber != -1)[midiPlayer.delegate playedNote:noteNumber AtOctave:octave];
+        
         // Get next packet
         packet = MIDIPacketNext(packet);
     }
     
     // Show note
     if (showNote) {
-        [midiPlayer.delegate showNote:noteNumber AtOctave:octave];
-        NSLog(@"*** End PacketList ***");
+        [midiPlayer.delegate showNote:exNote withStatus:exMidiStatus andVelocity:exVelocity andVisibility:YES andPlayer:player];
+        // NSLog(@"*** End PacketList ***");
     }
+}
+
+-(void)playNote:(char)note withStatus:(char)midiStatus andVelocity:(char)velocity andPlayer:(AudioUnit)player
+{
+    // Play all notes
+    OSStatus result = noErr;
+    result = MusicDeviceMIDIEvent (player, midiStatus, note, velocity, 0);
 }
 
 // this method assumes the class has a member called samplerUnit

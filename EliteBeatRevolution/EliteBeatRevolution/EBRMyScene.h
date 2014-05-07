@@ -7,6 +7,8 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
+#import <AudioToolbox/AudioToolbox.h>
+#import "MIDIPlayer.h"
 
 #define ERROR_MARGIN 20
 #define NOTE_SPEED 3
@@ -14,10 +16,12 @@
 
 @protocol EBRMySceneDelegate <NSObject>
 
--(void)playNote:(int)note AtOctave:(int)octave;
+-(void)playNote:(char)note withStatus:(char)midiStatus andVelocity:(char)velocity andPlayer:(AudioUnit)player;
 
 @end
 
-@interface EBRMyScene : SKScene
+@interface EBRMyScene : SKScene <MIDIPlayerDelegate>
+
+@property (weak, nonatomic) id <EBRMySceneDelegate> delegate;
 
 @end

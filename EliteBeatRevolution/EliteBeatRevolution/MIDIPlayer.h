@@ -19,15 +19,17 @@
 #define SOUND_FONT_EXTENSION @"sf2"
 #define SOUND_FONT_PATCH (int)3
 
+#define MIDI_CHANNEL 3
+
 @protocol MIDIPlayerDelegate <NSObject>
 
--(void)showNote:(int)note AtOctave:(int)octave;
+-(void) showNote:(char)note withStatus:(char)midiStatus andVelocity:(char)velocity andVisibility:(BOOL)visibility andPlayer:(AudioUnit)player;
 
 @end
 
 @interface MIDIPlayer : NSObject
 
-@property (weak, nonatomic) id delegate;
+@property (weak, nonatomic) id <MIDIPlayerDelegate> delegate;
 
 // Play midi without logging output
 -(void)midiTest;
