@@ -12,6 +12,12 @@
 #define NOTE_SPEED 3
 #define NOTE_RARITY 50
 
+@protocol EBRMySceneDelegate <NSObject>
+
+-(void)playNote:(int)note AtOctave:(int)octave;
+
+@end
+
 @interface EBRMyScene : SKScene
 
 @end
