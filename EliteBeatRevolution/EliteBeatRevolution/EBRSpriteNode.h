@@ -9,7 +9,17 @@
 #import <SpriteKit/SpriteKit.h>
 #import <AudioToolbox/AudioToolbox.h>
 
+@class EBRSpriteNode;
+
+@protocol EBRSpriteNodeDelegate <NSObject>
+
+-(void)wasPressed:(EBRSpriteNode *)node;
+
+@end
+
 @interface EBRSpriteNode : SKSpriteNode
+
+@property (weak, nonatomic) id <EBRSpriteNodeDelegate> delegate;
 
 @property (nonatomic) char note;
 @property (nonatomic) char midiStatus;

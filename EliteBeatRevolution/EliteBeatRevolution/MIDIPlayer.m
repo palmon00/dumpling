@@ -101,21 +101,11 @@ static void MyMIDIReadProc(const MIDIPacketList *pktlist,
                            void *refCon,
                            void *connRefCon) {
     
+    // Track whether we've created a visible note for this packet
+    BOOL madeVisibleNote = NO;
     
     MIDIPlayer *midiPlayer = (__bridge MIDIPlayer *)(refCon);
     AudioUnit player = (AudioUnit) midiPlayer.samplerUnit;
-    
-    // Track whether we should show a note for this packet
-    BOOL showNote = NO;
-    
-    // Track note number and octave
-    int noteNumber = -1;
-    int octave = -1;
-    
-    // Export variables
-    char exNote = '0';
-    char exMidiStatus = '0';
-    char exVelocity = '0';
     
     MIDIPacket *packet = (MIDIPacket *)pktlist->packet;
     for (int i=0; i < pktlist->numPackets; i++) {
@@ -129,79 +119,69 @@ static void MyMIDIReadProc(const MIDIPacketList *pktlist,
             Byte note = packet->data[1] & 0x7F;
             Byte velocity = packet->data[2] & 0x7F;
             
-            noteNumber = ((int) note) % 12;
-            octave = floor(((int) note) / 12.0);
-            NSString *noteType;
-            switch (noteNumber) {
-                case 0:
-                    noteType = @"C";
-                    break;
-                case 1:
-                    noteType = @"C#";
-                    break;
-                case 2:
-                    noteType = @"D";
-                    break;
-                case 3:
-                    noteType = @"D#";
-                    break;
-                case 4:
-                    noteType = @"E";
-                    break;
-                case 5:
-                    noteType = @"F";
-                    break;
-                case 6:
-                    noteType = @"F#";
-                    break;
-                case 7:
-                    noteType = @"G";
-                    break;
-                case 8:
-                    noteType = @"G#";
-                    break;
-                case 9:
-                    noteType = @"A";
-                    break;
-                case 10:
-                    noteType = @"Bb";
-                    break;
-                case 11:
-                    noteType = @"B";
-                    break;
-                default:
-                    break;
+//            int noteNumber = ((int) note) % 12;
+//            NSString *noteType;
+//            switch (noteNumber) {
+//                case 0:
+//                    noteType = @"C";
+//                    break;
+//                case 1:
+//                    noteType = @"C#";
+//                    break;
+//                case 2:
+//                    noteType = @"D";
+//                    break;
+//                case 3:
+//                    noteType = @"D#";
+//                    break;
+//                case 4:
+//                    noteType = @"E";
+//                    break;
+//                case 5:
+//                    noteType = @"F";
+//                    break;
+//                case 6:
+//                    noteType = @"F#";
+//                    break;
+//                case 7:
+//                    noteType = @"G";
+//                    break;
+//                case 8:
+//                    noteType = @"G#";
+//                    break;
+//                case 9:
+//                    noteType = @"A";
+//                    break;
+//                case 10:
+//                    noteType = @"Bb";
+//                    break;
+//                case 11:
+//                    noteType = @"B";
+//                    break;
+//                default:
+//                    break;
+//            }
+            
+            // The first MIDI_CHANNEL note with non-zero velocity should be shown
+            // We store the values and create the note when the packet is finished
+            if ((int)controller == MIDI_CHANNEL && !madeVisibleNote && (int)velocity != 0) {
+                [midiPlayer.delegate showNote:(char)note withStatus:(char)midiStatus andVelocity:(char)velocity andVisibility:YES andPlayer:player];
+                madeVisibleNote = YES;
+            } else {
+                if ((int)controller != MUTE_CHANNEL)
+                [midiPlayer.delegate showNote:(char)note withStatus:(char)midiStatus andVelocity:(char)velocity andVisibility:NO andPlayer:player];
             }
             
-            // Export all notes to be played invisibly
-            exNote = (char)note;
-            exMidiStatus = (char)midiStatus;
-            exVelocity = (char)velocity;
-            
-            [midiPlayer.delegate showNote:exNote withStatus:exMidiStatus andVelocity:exVelocity andVisibility:NO andPlayer:player];
-            
-            // Export only MIDI_CHANNEL notes as visible
-            if ((int)controller == MIDI_CHANNEL) {
-                // Play note if velocity is non zero
-                if ((int)velocity > 0) showNote = YES;
-                
-                NSString *packetData = @"";
-                for (int i = 0; i < packet->length; i++) {
-                    packetData = [packetData stringByAppendingFormat:@"%02X ", packet->data[i]];
-                }
-                // NSLog(@"PacketData: '%@'", packetData);
+#ifdef MIDI_WRITE
+            NSString *packetData = @"";
+            for (int i = 0; i < packet->length; i++) {
+                packetData = [packetData stringByAppendingFormat:@"%02X ", packet->data[i]];
             }
-            
+            NSLog(@"PacketData: '%@'", packetData);
+#endif
         }
-        
         // Get next packet
         packet = MIDIPacketNext(packet);
-    }
-    
-    // Show note
-    if (showNote) {
-        [midiPlayer.delegate showNote:exNote withStatus:exMidiStatus andVelocity:exVelocity andVisibility:YES andPlayer:player];
-        // NSLog(@"*** End PacketList ***");
     }
 }
 
@@ -271,6 +251,7 @@ static void MyMIDIReadProc(const MIDIPacketList *pktlist,
     // Called to do some MusicPlayer setup. This just
     // reduces latency when MusicPlayerStart is called
     MusicPlayerPreroll(p);
+    
     // Starts the music playing
     MusicPlayerStart(p);
     
@@ -280,7 +261,6 @@ static void MyMIDIReadProc(const MIDIPacketList *pktlist,
     UInt32 sz = sizeof(MusicTimeStamp);
     MusicSequenceGetIndTrack(s, 1, &t);
     MusicTrackGetProperty(t, kSequenceTrackProperty_TrackLength, &len, &sz);
-    
     
     while (1) { // kill time until the music is over
         usleep (3 * 1000 * 1000);
@@ -296,15 +276,105 @@ static void MyMIDIReadProc(const MIDIPacketList *pktlist,
     DisposeMusicPlayer(p);
 }
 
+//-(void) midiPlay {
+//	
+//    OSStatus result = noErr;
+//    
+//    
+//    [self createAUGraph];
+//    [self configureAndStartAudioProcessingGraph: self.processingGraph];
+//    
+//    // Create a client
+//    MIDIClientRef virtualMidi;
+//    result = MIDIClientCreate(CFSTR("Virtual Client"),
+//                              MyMIDINotifyProc,
+//                              NULL,
+//                              &virtualMidi);
+//    
+//    NSAssert( result == noErr, @"MIDIClientCreate failed. Error code: %d '%.4s'", (int) result, (const char *)&result);
+//    
+//    // Create an endpoint
+//    MIDIEndpointRef virtualEndpoint;
+//    result = MIDIDestinationCreate(virtualMidi, CFSTR("Virtual Destination"), MyMIDIReadProc, self.samplerUnit, &virtualEndpoint);
+//    
+//    NSAssert( result == noErr, @"MIDIDestinationCreate failed. Error code: %d '%.4s'", (int) result, (const char *)&result);
+//    
+//    
+//    
+//    // Create a new music sequence
+//    MusicSequence s;
+//    // Initialise the music sequence
+//    NewMusicSequence(&s);
+//    
+//    // Get a string to the path of the MIDI file which
+//    // should be located in the Resources folder
+//    //    NSString *midiFilePath = [[NSBundle mainBundle]
+//    //                              pathForResource:@"simpletest"
+//    //                              ofType:@"mid"];s
+//    NSString *midiFilePath = [[NSBundle mainBundle]
+//                              pathForResource:INPUT_SONG
+//                              ofType:INPUT_SONG_EXTENSION];
+//    
+//    // Create a new URL which points to the MIDI file
+//    NSURL * midiFileURL = [NSURL fileURLWithPath:midiFilePath];
+//    
+//    
+//    MusicSequenceFileLoad(s, (__bridge CFURLRef) midiFileURL, 0, 0);
+//    
+//    // Create a new music player
+//    MusicPlayer  p;
+//    // Initialise the music player
+//    NewMusicPlayer(&p);
+//    
+//    // ************* Set the endpoint of the sequence to be our virtual endpoint
+//    MusicSequenceSetMIDIEndpoint(s, virtualEndpoint);
+//    
+//    if (USE_SOUND_FONT) {
+//        // Load the sound font from file
+//        NSURL *presetURL = [[NSURL alloc] initFileURLWithPath:[[NSBundle mainBundle] pathForResource:SOUND_FONT ofType:SOUND_FONT_EXTENSION]];
+//        
+//        // Initialise the sound font
+//        [self loadFromDLSOrSoundFont: (NSURL *)presetURL withPatch: SOUND_FONT_PATCH];
+//    }
+//    
+//    // Load the sequence into the music player
+//    MusicPlayerSetSequence(p, s);
+//    // Called to do some MusicPlayer setup. This just
+//    // reduces latency when MusicPlayerStart is called
+//    MusicPlayerPreroll(p);
+//    // Starts the music playing
+//    MusicPlayerStart(p);
+//    
+//    // Get length of track so that we know how long to kill time for
+//    MusicTrack t;
+//    MusicTimeStamp len;
+//    UInt32 sz = sizeof(MusicTimeStamp);
+//    MusicSequenceGetIndTrack(s, 1, &t);
+//    MusicTrackGetProperty(t, kSequenceTrackProperty_TrackLength, &len, &sz);
+//    
+//    
+//    while (1) { // kill time until the music is over
+//        usleep (3 * 1000 * 1000);
+//        MusicTimeStamp now = 0;
+//        MusicPlayerGetTime (p, &now);
+//        if (now >= len)
+//            break;
+//    }
+//    
+//    // Stop the player and dispose of the objects
+//    MusicPlayerStop(p);
+//    DisposeMusicSequence(s);
+//    DisposeMusicPlayer(p);
+//}
+
 -(void) midiPlay {
-	
-    OSStatus result = noErr;
     
-    
+    // Setup processing graph
     [self createAUGraph];
     [self configureAndStartAudioProcessingGraph: self.processingGraph];
     
     // Create a client
+    OSStatus result = noErr;
     MIDIClientRef virtualMidi;
     result = MIDIClientCreate(CFSTR("Virtual Client"),
                               MyMIDINotifyProc,
@@ -324,8 +394,9 @@ static void MyMIDIReadProc(const MIDIPacketList *pktlist,
     // Create a new music sequence
     MusicSequence s;
     // Initialise the music sequence
-    NewMusicSequence(&s);
-    
+    result = NewMusicSequence(&s);
+    NSLog(@"NewMusicSequence: %d", (int)result);
+
     // Get a string to the path of the MIDI file which
     // should be located in the Resources folder
     //    NSString *midiFilePath = [[NSBundle mainBundle]
@@ -334,17 +405,21 @@ static void MyMIDIReadProc(const MIDIPacketList *pktlist,
     NSString *midiFilePath = [[NSBundle mainBundle]
                               pathForResource:INPUT_SONG
                               ofType:INPUT_SONG_EXTENSION];
+    NSLog(@"%@", midiFilePath);
     
     // Create a new URL which points to the MIDI file
     NSURL * midiFileURL = [NSURL fileURLWithPath:midiFilePath];
+    NSLog(@"%@", midiFileURL);
     
     
-    MusicSequenceFileLoad(s, (__bridge CFURLRef) midiFileURL, 0, 0);
+    result = MusicSequenceFileLoad(s, (__bridge CFURLRef) midiFileURL, 0, 0);
+    NSLog(@"MusicSequenceFileLoad: %d", (int)result);
     
     // Create a new music player
     MusicPlayer  p;
     // Initialise the music player
-    NewMusicPlayer(&p);
+    result = NewMusicPlayer(&p);
+    NSLog(@"NewMusicPlayer: %d", (int)result);
     
     // ************* Set the endpoint of the sequence to be our virtual endpoint
     MusicSequenceSetMIDIEndpoint(s, virtualEndpoint);
@@ -358,33 +433,48 @@ static void MyMIDIReadProc(const MIDIPacketList *pktlist,
     }
     
     // Load the sequence into the music player
-    MusicPlayerSetSequence(p, s);
+    result = MusicPlayerSetSequence(p, s);
+    NSLog(@"MusicPlayerSetSequence: %d", (int)result);
     // Called to do some MusicPlayer setup. This just
     // reduces latency when MusicPlayerStart is called
-    MusicPlayerPreroll(p);
+    result = MusicPlayerPreroll(p);
+    NSLog(@"MusicPlayerPreroll: %d", (int)result);
+    
+    NSLog(@"Starting to play music.");
     // Starts the music playing
-    MusicPlayerStart(p);
+    result = MusicPlayerStart(p);
+    NSLog(@"MusicPlayerStart: %d", (int)result);
+
+    // Doesn't always work so cutting out for now until we can find a better solution
+    // Song will play through
     
-    // Get length of track so that we know how long to kill time for
-    MusicTrack t;
-    MusicTimeStamp len;
-    UInt32 sz = sizeof(MusicTimeStamp);
-    MusicSequenceGetIndTrack(s, 1, &t);
-    MusicTrackGetProperty(t, kSequenceTrackProperty_TrackLength, &len, &sz);
-    
-    
-    while (1) { // kill time until the music is over
-        usleep (3 * 1000 * 1000);
-        MusicTimeStamp now = 0;
-        MusicPlayerGetTime (p, &now);
-        if (now >= len)
-            break;
-    }
-    
-    // Stop the player and dispose of the objects
-    MusicPlayerStop(p);
-    DisposeMusicSequence(s);
-    DisposeMusicPlayer(p);
+//    // Get length of track so that we know how long to kill time for
+//    MusicTrack t;
+//    MusicTimeStamp len;
+//    UInt32 sz = sizeof(MusicTimeStamp);
+//    result = MusicSequenceGetIndTrack(s, 1, &t);
+//    NSLog(@"MusicSequenceGetIndTrack: %d", (int)result);
+//    
+//    result = MusicTrackGetProperty(t, kSequenceTrackProperty_TrackLength, &len, &sz);
+//    NSLog(@"MusicTrackGetProperty: %d", (int)result);
+//    if (!(len > 0)) len = 348;
+//    
+//    while (1) { // kill time until the music is over
+//        usleep (3 * 1000 * 1000);
+//        MusicTimeStamp now = 0;
+//        result = MusicPlayerGetTime (p, &now);
+//        NSLog(@"MusicPlayerGetTime: %d %f %f", (int)result, now, len);
+//        if (now >= len)
+//            break;
+//    }
+//    
+//    // Stop the player and dispose of the objects
+//    result = MusicPlayerStop(p);
+//    NSLog(@"MusicPlayerStop: %d", (int)result);
+//    result = DisposeMusicSequence(s);
+//    NSLog(@"DisposeMusicSequence: %d", (int)result);
+//    result = DisposeMusicPlayer(p);
+//    NSLog(@"DisposeMusicPlayer: %d", (int)result);
 }
 
 

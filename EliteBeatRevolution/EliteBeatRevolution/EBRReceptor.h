@@ -18,6 +18,6 @@
 
 @interface EBRReceptor : SKSpriteNode
 
-@property (strong, nonatomic) id delegate;
+@property (weak, nonatomic) id delegate;
 
 @end

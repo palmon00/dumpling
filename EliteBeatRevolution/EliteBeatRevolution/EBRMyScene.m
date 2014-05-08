@@ -10,10 +10,51 @@
 #import "EBRReceptor.h"
 #import "EBRSpriteNode.h"
 
-@interface EBRMyScene () <EBRReceptorDelegate>
+@interface EBRMyScene () <EBRSpriteNodeDelegate>
 
-@property (nonatomic) BOOL shouldAddNote;
 @property (strong, nonatomic) NSMutableArray *notesToAdd; // of EBRSpriteNode
+@property (atomic) int lastNote;
+
+@property (strong, nonatomic) SKTexture *up1;
+@property (strong, nonatomic) SKTexture *up2;
+@property (strong, nonatomic) SKTexture *up3;
+@property (strong, nonatomic) SKTexture *up4;
+@property (strong, nonatomic) SKTexture *up5;
+@property (strong, nonatomic) SKTexture *up6;
+@property (strong, nonatomic) SKTexture *up7;
+@property (strong, nonatomic) SKTexture *up8;
+@property (strong, nonatomic) SKTexture *up9;
+
+@property (strong, nonatomic) SKTexture *down1;
+@property (strong, nonatomic) SKTexture *down2;
+@property (strong, nonatomic) SKTexture *down3;
+@property (strong, nonatomic) SKTexture *down4;
+@property (strong, nonatomic) SKTexture *down5;
+@property (strong, nonatomic) SKTexture *down6;
+@property (strong, nonatomic) SKTexture *down7;
+@property (strong, nonatomic) SKTexture *down8;
+@property (strong, nonatomic) SKTexture *down9;
+
+@property (strong, nonatomic) SKTexture *left1;
+@property (strong, nonatomic) SKTexture *left2;
+@property (strong, nonatomic) SKTexture *left3;
+@property (strong, nonatomic) SKTexture *left4;
+@property (strong, nonatomic) SKTexture *left5;
+@property (strong, nonatomic) SKTexture *left6;
+@property (strong, nonatomic) SKTexture *left7;
+@property (strong, nonatomic) SKTexture *left8;
+@property (strong, nonatomic) SKTexture *left9;
+
+@property (strong, nonatomic) SKTexture *right1;
+@property (strong, nonatomic) SKTexture *right2;
+@property (strong, nonatomic) SKTexture *right3;
+@property (strong, nonatomic) SKTexture *right4;
+@property (strong, nonatomic) SKTexture *right5;
+@property (strong, nonatomic) SKTexture *right6;
+@property (strong, nonatomic) SKTexture *right7;
+@property (strong, nonatomic) SKTexture *right8;
+@property (strong, nonatomic) SKTexture *right9;
+
 
 @end
 
@@ -31,167 +72,272 @@
         
         self.backgroundColor = [SKColor colorWithRed:0.15 green:0.15 blue:0.3 alpha:1.0];
         
-        EBRReceptor *downReceptor = [EBRReceptor spriteNodeWithImageNamed:@"Down Receptor.png"];
-        EBRReceptor *leftReceptor = [EBRReceptor spriteNodeWithImageNamed:@"Left Receptor.png"];
-        EBRReceptor *rightReceptor = [EBRReceptor spriteNodeWithImageNamed:@"Right Receptor.png"];
-        EBRReceptor *upReceptor = [EBRReceptor spriteNodeWithImageNamed:@"Up Receptor.png"];
+        SKSpriteNode *leftPlacer = [SKSpriteNode spriteNodeWithImageNamed:@"Right Receptor.png"];
+        SKSpriteNode *rightPlacer = [SKSpriteNode spriteNodeWithImageNamed:@"Left Receptor.png"];
         
-        leftReceptor.position = CGPointMake(CGRectGetWidth(self.frame)/5, 1*CGRectGetHeight(self.frame)/10);
-        downReceptor.position = CGPointMake(2*CGRectGetWidth(self.frame)/5, 1*CGRectGetHeight(self.frame)/10);
-        upReceptor.position = CGPointMake(3*CGRectGetWidth(self.frame)/5, 1*CGRectGetHeight(self.frame)/10);
-        rightReceptor.position = CGPointMake(4*CGRectGetWidth(self.frame)/5, 1*CGRectGetHeight(self.frame)/10);
+        leftPlacer.position = CGPointMake(CGRectGetWidth(self.frame)/129, 1*CGRectGetHeight(self.frame)/10);
+        rightPlacer.position = CGPointMake(128*CGRectGetWidth(self.frame)/129, 1*CGRectGetHeight(self.frame)/10);
         
-        [self addChild:leftReceptor];
-        [self addChild:downReceptor];
-        [self addChild:upReceptor];
-        [self addChild:rightReceptor];
+        [self addChild:leftPlacer];
+        [self addChild:rightPlacer];
         
-        // Respond to receptor touches
-        leftReceptor.delegate = self;
-        downReceptor.delegate = self;
-        upReceptor.delegate = self;
-        rightReceptor.delegate = self;
+        // Ensure placers are below notes
+        leftPlacer.zPosition = -100;
+        rightPlacer.zPosition = -100;
         
-        // Enable touch events
-        leftReceptor.userInteractionEnabled = YES;
-        downReceptor.userInteractionEnabled = YES;
-        upReceptor.userInteractionEnabled = YES;
-        rightReceptor.userInteractionEnabled = YES;
+        // Initialize lastNote
+        self.lastNote = 0;
         
-        // Ensure receptors are above notes
-        leftReceptor.zPosition = 100;
-        downReceptor.zPosition = 100;
-        upReceptor.zPosition = 100;
-        rightReceptor.zPosition = 100;
+        // Add dancing note
+        SKSpriteNode *dancer = [SKSpriteNode spriteNodeWithImageNamed:@"walk_down_1"];
+        dancer.position = CGPointMake(self.frame.size.width/2, self.frame.size.height*2/3);
+        dancer.name = @"dancer";
+        [self addChild:dancer];
         
-        // Set no note initially
-        self.shouldAddNote = NO;
+        self.up1 = [SKTexture textureWithImageNamed:@"walk_up_1"];
+        self.up2 = [SKTexture textureWithImageNamed:@"walk_up_2"];
+        self.up3 = [SKTexture textureWithImageNamed:@"walk_up_3"];
+        self.up4 = [SKTexture textureWithImageNamed:@"walk_up_4"];
+        self.up5 = [SKTexture textureWithImageNamed:@"walk_up_5"];
+        self.up6 = [SKTexture textureWithImageNamed:@"walk_up_6"];
+        self.up7 = [SKTexture textureWithImageNamed:@"walk_up_7"];
+        self.up8 = [SKTexture textureWithImageNamed:@"walk_up_8"];
+        self.up9 = [SKTexture textureWithImageNamed:@"walk_up_9"];
+        
+        self.down1 = [SKTexture textureWithImageNamed:@"walk_down_1"];
+        self.down2 = [SKTexture textureWithImageNamed:@"walk_down_2"];
+        self.down3 = [SKTexture textureWithImageNamed:@"walk_down_3"];
+        self.down4 = [SKTexture textureWithImageNamed:@"walk_down_4"];
+        self.down5 = [SKTexture textureWithImageNamed:@"walk_down_5"];
+        self.down6 = [SKTexture textureWithImageNamed:@"walk_down_6"];
+        self.down7 = [SKTexture textureWithImageNamed:@"walk_down_7"];
+        self.down8 = [SKTexture textureWithImageNamed:@"walk_down_8"];
+        self.down9 = [SKTexture textureWithImageNamed:@"walk_down_9"];
+        
+        self.left1 = [SKTexture textureWithImageNamed:@"walk_left_1"];
+        self.left2 = [SKTexture textureWithImageNamed:@"walk_left_2"];
+        self.left3 = [SKTexture textureWithImageNamed:@"walk_left_3"];
+        self.left4 = [SKTexture textureWithImageNamed:@"walk_left_4"];
+        self.left5 = [SKTexture textureWithImageNamed:@"walk_left_5"];
+        self.left6 = [SKTexture textureWithImageNamed:@"walk_left_6"];
+        self.left7 = [SKTexture textureWithImageNamed:@"walk_left_7"];
+        self.left8 = [SKTexture textureWithImageNamed:@"walk_left_8"];
+        self.left9 = [SKTexture textureWithImageNamed:@"walk_left_9"];
+        
+        self.right1 = [SKTexture textureWithImageNamed:@"walk_right_1"];
+        self.right2 = [SKTexture textureWithImageNamed:@"walk_right_2"];
+        self.right3 = [SKTexture textureWithImageNamed:@"walk_right_3"];
+        self.right4 = [SKTexture textureWithImageNamed:@"walk_right_4"];
+        self.right5 = [SKTexture textureWithImageNamed:@"walk_right_5"];
+        self.right6 = [SKTexture textureWithImageNamed:@"walk_right_6"];
+        self.right7 = [SKTexture textureWithImageNamed:@"walk_right_7"];
+        self.right8 = [SKTexture textureWithImageNamed:@"walk_right_8"];
+        self.right9 = [SKTexture textureWithImageNamed:@"walk_right_9"];
+        
+        [self dancerNeutral];
     }
     return self;
 }
 
 -(void)update:(CFTimeInterval)currentTime {
     /* Called before each frame is rendered */
-
+    
     [self enumerateChildNodesWithName:@"note" usingBlock:^(SKNode *node, BOOL *stop) {
         
-        // Remove notes under buttons
-        if (node.position.y <= 1*CGRectGetHeight(self.frame)/10) {
-            EBRSpriteNode *ebrSpriteNode = (EBRSpriteNode *)node;
-            
-            // Play the note if it is note visible
-            if (!ebrSpriteNode.visibility) {
-                // Let's play the music asynchronously
-//                dispatch_queue_t playQueue = dispatch_queue_create("playQueue", NULL);
-//                dispatch_async(playQueue, ^{
-                    [self.delegate playNote:ebrSpriteNode.note withStatus:ebrSpriteNode.midiStatus andVelocity:ebrSpriteNode.velocity andPlayer:ebrSpriteNode.player];
-//                });
+        EBRSpriteNode *ebrSpriteNode = (EBRSpriteNode *)node;
+        
+        // Remove visible notes when they reach bottom of screen
+        if (ebrSpriteNode.visibility) {
+            if (ebrSpriteNode.position.y <= 0) {
+                [node removeFromParent];
+                [self dancerFail];
             }
+        } else {
             
-            // Remove the note
-            [node removeFromParent];
+            // Play and remove invisible notes under buttons
+            if (node.position.y <= 1*CGRectGetHeight(self.frame)/10) {
+                
+                // Play note
+                [self.delegate playNote:ebrSpriteNode.note withStatus:ebrSpriteNode.midiStatus andVelocity:ebrSpriteNode.velocity andPlayer:ebrSpriteNode.player];
+                
+                // Remove the note
+                [node removeFromParent];
+            }
         }
-        else {
-            // Move note down screen
-            CGPoint newPosition = CGPointMake(node.position.x, node.position.y - NOTE_SPEED);
-            node.position = newPosition;
-        }
+        
+        // Move note down screen
+        CGPoint newPosition = CGPointMake(node.position.x, node.position.y - NOTE_SPEED);
+        node.position = newPosition;
     }];
     
     // Only add a notes at end of update cycle
-    NSArray *currentNotesToAdd = [self.notesToAdd copy];
-    for (EBRSpriteNode *spriteNode in currentNotesToAdd) {
-        [self addChild:spriteNode];
-        [self.notesToAdd removeObject:spriteNode];
+    if ([self.notesToAdd count]) {
+        NSArray *currentNotesToAdd = [self.notesToAdd copy];
+        for (EBRSpriteNode *spriteNode in currentNotesToAdd) {
+            [self addChild:spriteNode];
+            [self.notesToAdd removeObject:spriteNode];
+        }
     }
 }
 
 
--(void) showNote:(char)note withStatus:(char)midiStatus andVelocity:(char)velocity andVisibility:(BOOL)visibility andPlayer:(AudioUnit)player
+-(void)showNote:(char)note withStatus:(char)midiStatus andVelocity:(char)velocity andVisibility:(BOOL)visibility andPlayer:(AudioUnit)player
 {
-//    NSLog(@"Adding note!");
-    [self.notesToAdd addObject:[self randomNote:note withStatus:midiStatus andVelocity:velocity andVisibility:visibility andPlayer:(AudioUnit)player]];
+    // Add invisble notes in middle
+    if (!visibility) {
+        EBRSpriteNode *newNote = [[EBRSpriteNode alloc] init];
+        newNote.position = CGPointMake(CGRectGetWidth(self.frame)/2, CGRectGetHeight(self.frame)/2);
+        newNote.name = @"note";
+        newNote.note = note;
+        newNote.midiStatus = midiStatus;
+        newNote.velocity = velocity;
+        newNote.player = player;
+        newNote.visibility = NO;
+        newNote.userInteractionEnabled = NO;
+        [self.notesToAdd addObject:newNote];
+        return;
+    }
+    
+    // Add visible notes in position based on note change range
+    EBRSpriteNode *newNote = nil;
+    
+    int noteChange = (int)note - self.lastNote;
+    
+    if (noteChange > 0) {
+        newNote = [EBRSpriteNode spriteNodeWithImageNamed:@"Right.gif"];
+    } else if (noteChange == 0) {
+        newNote = [EBRSpriteNode spriteNodeWithImageNamed:@"Up.gif"];
+    } else if (noteChange < 0) {
+        newNote = [EBRSpriteNode spriteNodeWithImageNamed:@"Left.gif"];
+    } else {
+        newNote = [EBRSpriteNode spriteNodeWithImageNamed:@"Down.gif"];
+    }
+    
+    //    int noteNumber = ((int) note) % 12;
+    newNote.position = CGPointMake(((int)note)*CGRectGetWidth(self.frame)/129, CGRectGetHeight(self.frame)/2);
+    
+    newNote.name = @"note";
+    newNote.note = note;
+    newNote.midiStatus = midiStatus;
+    newNote.velocity = velocity;
+    newNote.player = player;
+    newNote.visibility = YES;
+    newNote.delegate = self;
+    newNote.userInteractionEnabled = YES;
+    
+    [self.notesToAdd addObject:newNote];
+    
+    self.lastNote = (int)note;
 }
 
--(EBRSpriteNode *)randomNote:(char)note withStatus:(char)midiStatus andVelocity:(char)velocity andVisibility:(BOOL)visibility andPlayer:(AudioUnit)player
+-(void)wasPressed:(EBRSpriteNode *)node;
 {
-    // Add a random note in a random position
-    EBRSpriteNode *randomNote = nil;
+    // Play note
+    [self.delegate playNote:node.note withStatus:node.midiStatus andVelocity:node.velocity andPlayer:node.player];
     
-    int randomNoteType = arc4random() % 4;
-    switch (randomNoteType) {
-        case 0:
-            if (visibility) randomNote = [EBRSpriteNode spriteNodeWithImageNamed:@"Left.gif"];
-            else randomNote = [[EBRSpriteNode alloc] init];
-            randomNote.position = CGPointMake(CGRectGetWidth(self.frame)/5, CGRectGetHeight(self.frame)*.5);
-            break;
-        case 1:
-            if (visibility) randomNote = [EBRSpriteNode spriteNodeWithImageNamed:@"Down.gif"];
-            else randomNote = [[EBRSpriteNode alloc] init];
-            randomNote.position = CGPointMake(2*CGRectGetWidth(self.frame)/5, CGRectGetHeight(self.frame)*.5);
-            break;
-        case 2:
-            if (visibility) randomNote = [EBRSpriteNode spriteNodeWithImageNamed:@"Up.gif"];
-            else randomNote = [[EBRSpriteNode alloc] init];
-            randomNote.position = CGPointMake(3*CGRectGetWidth(self.frame)/5, CGRectGetHeight(self.frame)*.5);
-            break;
-        case 3:
-            if (visibility) randomNote = [EBRSpriteNode spriteNodeWithImageNamed:@"Left.gif"];
-            else randomNote = [[EBRSpriteNode alloc] init];
-            randomNote.position = CGPointMake(4*CGRectGetWidth(self.frame)/5, CGRectGetHeight(self.frame)*.5);
-            break;
-        default:
-            break;
-    }
+    // Destroy node
+    [node removeFromParent];
     
-    if (visibility) {
-        randomNote.name = @"note";
-        randomNote.note = note;
-        randomNote.midiStatus = midiStatus;
-        randomNote.velocity = velocity;
-        randomNote.player = player;
-        randomNote.visibility = YES;
-    }
-    else {
-        randomNote.name = @"note";
-        randomNote.note = note;
-        randomNote.midiStatus = midiStatus;
-        randomNote.velocity = velocity;
-        randomNote.player = player;
-        randomNote.visibility = NO;
-    }
-    return randomNote;
+    // Animate dancer
+    [self dancerSuccess];
 }
 
--(void)wasPressed:(EBRReceptor *)receptor
+//-(void)wasPressed:(EBRReceptor *)receptor
+//{
+//    __block BOOL destroyedNote = NO;
+//
+//    // Destroy any visible notes under receptor
+//    [self enumerateChildNodesWithName:@"note" usingBlock:^(SKNode *node, BOOL *stop) {
+//        //        NSLog(@"NodeX %f ReceptorX %f", node.position.x, receptor.position.x);
+//        EBRSpriteNode *ebrSpriteNode = (EBRSpriteNode *)node;
+//        if (ebrSpriteNode.visibility == YES) {
+//            if (ebrSpriteNode.position.x == receptor.position.x)
+//                if ((node.position.y > receptor.position.y - ERROR_MARGIN) &&
+//                    (node.position.y < receptor.position.y + ERROR_MARGIN))
+//                {
+//                    NSLog(@"NodeXY %f %f ReceptorXY %f %f", node.position.x, node.position.y, receptor.position.x, receptor.position.y);
+//                    [node removeFromParent];
+//                    destroyedNote = YES;
+//                }
+//        }
+//    }];
+//
+//    SKLabelNode *feedback = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
+//    if (destroyedNote) feedback.text = @"Wonderful!";
+//    else feedback.text = @"Miss!";
+//    feedback.fontSize = 42;
+//    feedback.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame));
+//    SKAction *fadeAway = [SKAction fadeOutWithDuration:0.5];
+//    SKAction *moveUp = [SKAction moveByX:0 y:100 duration:0.5];
+//    SKAction *fadeMove = [SKAction group:@[fadeAway, moveUp]];
+//    SKAction *remove = [SKAction removeFromParent];
+//    SKAction *fadeSequence = [SKAction sequence:@[fadeMove, remove]];
+//    [self addChild:feedback];
+//    [feedback runAction:fadeSequence];
+//}
+
+-(void)dancerFail
 {
-    __block BOOL destroyedNote = NO;
+    // Animate dancer
+    NSMutableArray *dance = [[NSMutableArray alloc] init];
+    [dance addObject:self.up1];
+    [dance addObject:self.up2];
+    [dance addObject:self.up3];
+    [dance addObject:self.up4];
+    [dance addObject:self.up5];
+    [dance addObject:self.up6];
+    [dance addObject:self.up7];
+    [dance addObject:self.up8];
+    [dance addObject:self.up9];
+    SKAction *action = [SKAction animateWithTextures:dance timePerFrame:0.1 resize:YES restore:NO];
+    [[self childNodeWithName:@"dancer"] runAction:action];
+}
+
+-(void)dancerSuccess
+{
+    // Animate dancer
+    NSMutableArray *dance = [[NSMutableArray alloc] init];
+    [dance addObject:self.right8];
+    [dance addObject:self.right9];
+    [dance addObject:self.right8];
+    [dance addObject:self.right9];
+    SKAction *swingRight = [SKAction animateWithTextures:dance timePerFrame:0.2];
+    SKAction *moveRight = [SKAction moveByX:10 y:0 duration:0.8];
+    SKAction *shuffleRight = [SKAction group:@[swingRight, moveRight]];
+    [dance removeAllObjects];
     
-    // Destroy any notes under receptor
-    [self enumerateChildNodesWithName:@"note" usingBlock:^(SKNode *node, BOOL *stop) {
-//        NSLog(@"NodeX %f ReceptorX %f", node.position.x, receptor.position.x);
-        if (node.position.x == receptor.position.x)
-            if ((node.position.y > receptor.position.y - ERROR_MARGIN) &&
-                (node.position.y < receptor.position.y + ERROR_MARGIN))
-            {
-                NSLog(@"NodeXY %f %f ReceptorXY %f %f", node.position.x, node.position.y, receptor.position.x, receptor.position.y);
-                [node removeFromParent];
-                destroyedNote = YES;
-            }
-    }];
+    [dance addObject:self.left1];
+    [dance addObject:self.left2];
+    [dance addObject:self.left1];
+    [dance addObject:self.left2];
+    [dance addObject:self.left1];
+    [dance addObject:self.left2];
+    [dance addObject:self.left1];
+    [dance addObject:self.left2];
+    SKAction *swingLeft = [SKAction animateWithTextures:dance timePerFrame:0.2];
+    SKAction *moveLeft = [SKAction moveByX:-20 y:0 duration:1.6];
+    SKAction *shuffleLeft = [SKAction group:@[swingLeft, moveLeft]];
     
-    SKLabelNode *feedback = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
-    if (destroyedNote) feedback.text = @"Wonderful!";
-    else feedback.text = @"Miss!";
-    feedback.fontSize = 42;
-    feedback.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame));
-    SKAction *fadeAway = [SKAction fadeOutWithDuration:0.5];
-    SKAction *moveUp = [SKAction moveByX:0 y:100 duration:0.5];
-    SKAction *fadeMove = [SKAction group:@[fadeAway, moveUp]];
-    SKAction *remove = [SKAction removeFromParent];
-    SKAction *fadeSequence = [SKAction sequence:@[fadeMove, remove]];
-    [self addChild:feedback];
-    [feedback runAction:fadeSequence];
+    SKAction *shuffle = [SKAction sequence:@[shuffleRight, shuffleLeft, shuffleRight]];
+    [[self childNodeWithName:@"dancer"] runAction:shuffle];
+}
+
+-(void)dancerNeutral
+{
+    // Animate dancer
+    NSMutableArray *dance = [[NSMutableArray alloc] init];
+    [dance addObject:self.down1];
+    [dance addObject:self.down2];
+    [dance addObject:self.down3];
+    [dance addObject:self.down4];
+    [dance addObject:self.down5];
+    [dance addObject:self.down6];
+    [dance addObject:self.down7];
+    [dance addObject:self.down8];
+    [dance addObject:self.down9];
+    SKAction *action = [SKAction animateWithTextures:dance timePerFrame:0.1 resize:YES restore:NO];
+    SKAction *repeat = [SKAction repeatAction:action count:1000];
+    [[self childNodeWithName:@"dancer"] runAction:repeat];
 }
 
 @end

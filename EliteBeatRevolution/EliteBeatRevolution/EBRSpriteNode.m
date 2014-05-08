@@ -10,4 +10,9 @@
 
 @implementation EBRSpriteNode
 
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [self.delegate wasPressed:self];
+}
+
 @end

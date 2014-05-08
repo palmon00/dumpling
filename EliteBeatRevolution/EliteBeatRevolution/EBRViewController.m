@@ -55,36 +55,16 @@
 {
     [super viewDidAppear:animated];
     
-    // Launch Note Generating MIDI Player asynchronously
-    [self launchNotePlayer];
+    self.notePlayer.delegate = self.myScene;
+    self.myScene.delegate = self.notePlayer;
     
-    // FOR DEBUGGING!
-//    [self launchSoundPlayer];
-    
-    // Wait and then launch Sound Generating MIDI Player asynchronously
-//    [self performSelector:@selector(launchSoundPlayer) withObject:nil afterDelay:2];
-}
-
--(void)launchNotePlayer
-{
     dispatch_queue_t noteQueue = dispatch_queue_create("noteQueue", NULL);
     dispatch_async(noteQueue, ^{
-        self.notePlayer.delegate = self.myScene;
-        self.myScene.delegate = self.notePlayer;
-        
-        NSLog(@"%@ %@", self.notePlayer.delegate, self.myScene.delegate);
+//#ifdef MIDI_TEST
+//    [self.notePlayer midiTest];
+//#else
         [self.notePlayer midiPlay];
-    });
-}
-
--(void)launchSoundPlayer
-{
-    dispatch_queue_t soundQueue = dispatch_queue_create("soundQueue", NULL);
-    dispatch_async(soundQueue, ^{
-//        self.soundPlayer.delegate = nil;
-        self.soundPlayer.delegate = self.myScene; // for DEBUGGING!
-        self.myScene.delegate = self.soundPlayer;
-        [self.soundPlayer midiPlay];
+//#endif
     });
 }
 
