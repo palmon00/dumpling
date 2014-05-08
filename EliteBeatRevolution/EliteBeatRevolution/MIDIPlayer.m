@@ -7,9 +7,8 @@
 //
 
 #import "MIDIPlayer.h"
-#import "EBRMyScene.h"
 
-@interface MIDIPlayer () <EBRMySceneDelegate>
+@interface MIDIPlayer ()
 
 @property (readwrite) AUGraph   processingGraph;
 @property (readwrite) AudioUnit samplerUnit;
@@ -163,14 +162,17 @@ static void MyMIDIReadProc(const MIDIPacketList *pktlist,
 //            }
             
             // The first MIDI_CHANNEL note with non-zero velocity should be shown
-            // We store the values and create the note when the packet is finished
+#ifndef PLAY_ALL
             if ((int)controller == MIDI_CHANNEL && !madeVisibleNote && (int)velocity != 0) {
                 [midiPlayer.delegate showNote:(char)note withStatus:(char)midiStatus andVelocity:(char)velocity andVisibility:YES andPlayer:player];
                 madeVisibleNote = YES;
             } else {
+#endif
                 if ((int)controller != MUTE_CHANNEL)
                 [midiPlayer.delegate showNote:(char)note withStatus:(char)midiStatus andVelocity:(char)velocity andVisibility:NO andPlayer:player];
+#ifndef PLAY_ALL
             }
+#endif
             
 #ifdef MIDI_WRITE
             NSString *packetData = @"";
@@ -448,33 +450,33 @@ static void MyMIDIReadProc(const MIDIPacketList *pktlist,
     // Doesn't always work so cutting out for now until we can find a better solution
     // Song will play through
     
-//    // Get length of track so that we know how long to kill time for
-//    MusicTrack t;
-//    MusicTimeStamp len;
-//    UInt32 sz = sizeof(MusicTimeStamp);
-//    result = MusicSequenceGetIndTrack(s, 1, &t);
-//    NSLog(@"MusicSequenceGetIndTrack: %d", (int)result);
-//    
-//    result = MusicTrackGetProperty(t, kSequenceTrackProperty_TrackLength, &len, &sz);
-//    NSLog(@"MusicTrackGetProperty: %d", (int)result);
-//    if (!(len > 0)) len = 348;
-//    
-//    while (1) { // kill time until the music is over
-//        usleep (3 * 1000 * 1000);
-//        MusicTimeStamp now = 0;
-//        result = MusicPlayerGetTime (p, &now);
-//        NSLog(@"MusicPlayerGetTime: %d %f %f", (int)result, now, len);
-//        if (now >= len)
-//            break;
-//    }
-//    
-//    // Stop the player and dispose of the objects
-//    result = MusicPlayerStop(p);
-//    NSLog(@"MusicPlayerStop: %d", (int)result);
-//    result = DisposeMusicSequence(s);
-//    NSLog(@"DisposeMusicSequence: %d", (int)result);
-//    result = DisposeMusicPlayer(p);
-//    NSLog(@"DisposeMusicPlayer: %d", (int)result);
+    // Get length of track so that= we know how long to kill time for
+    MusicTrack t;
+    MusicTimeStamp len;
+    UInt32 sz = sizeof(MusicTimeStamp);
+    result = MusicSequenceGetIndTrack(s, 1, &t);
+    NSLog(@"MusicSequenceGetIndTrack: %d", (int)result);
+    
+    result = MusicTrackGetProperty(t, kSequenceTrackProperty_TrackLength, &len, &sz);
+    NSLog(@"MusicTrackGetProperty: %d", (int)result);
+    if (!(len > 0)) len = 348;
+    
+    while (1) { // kill time until the music is over
+        usleep (3 * 1000 * 1000);
+        MusicTimeStamp now = 0;
+        result = MusicPlayerGetTime (p, &now);
+        NSLog(@"MusicPlayerGetTime: %d %f %f", (int)result, now, len);
+        if (now >= len)
+            break;
+    }
+    
+    // Stop the player and dispose of the objects
+    result = MusicPlayerStop(p);
+    NSLog(@"MusicPlayerStop: %d", (int)result);
+    result = DisposeMusicSequence(s);
+    NSLog(@"DisposeMusicSequence: %d", (int)result);
+    result = DisposeMusicPlayer(p);
+    NSLog(@"DisposeMusicPlayer: %d", (int)result);
 }
 
 

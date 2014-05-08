@@ -336,7 +336,7 @@
     [dance addObject:self.down8];
     [dance addObject:self.down9];
     SKAction *action = [SKAction animateWithTextures:dance timePerFrame:0.1 resize:YES restore:NO];
-    SKAction *repeat = [SKAction repeatAction:action count:1000];
+    SKAction *repeat = [SKAction repeatActionForever:action];
     [[self childNodeWithName:@"dancer"] runAction:repeat];
 }
 

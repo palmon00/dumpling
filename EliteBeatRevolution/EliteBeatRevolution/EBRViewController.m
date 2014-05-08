@@ -60,11 +60,7 @@
     
     dispatch_queue_t noteQueue = dispatch_queue_create("noteQueue", NULL);
     dispatch_async(noteQueue, ^{
-//#ifdef MIDI_TEST
-//    [self.notePlayer midiTest];
-//#else
         [self.notePlayer midiPlay];
-//#endif
     });
 }
 

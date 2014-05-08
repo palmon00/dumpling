@@ -45,7 +45,6 @@
 		1E2DD24C1910B5C2000F196A /* Up Receptor (Small).png in Resources */ = {isa = PBXBuildFile; fileRef = 1E2DD2381910B5C2000F196A /* Up Receptor (Small).png */; };
 		1E2DD24D1910B5C2000F196A /* Up Receptor.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E2DD2391910B5C2000F196A /* Up Receptor.png */; };
 		1E2DD24E1910B5C2000F196A /* Up.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1E2DD23A1910B5C2000F196A /* Up.gif */; };
-		1E2DD2511910B857000F196A /* EBRReceptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E2DD2501910B857000F196A /* EBRReceptor.m */; };
 		1E319FF6191B50EF00CCA757 /* walk_right_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E319FED191B50EF00CCA757 /* walk_right_1.png */; };
 		1E319FF7191B50EF00CCA757 /* walk_right_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E319FEE191B50EF00CCA757 /* walk_right_2.png */; };
 		1E319FF8191B50EF00CCA757 /* walk_right_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E319FEF191B50EF00CCA757 /* walk_right_3.png */; };
@@ -153,8 +152,6 @@
 		1E2DD2381910B5C2000F196A /* Up Receptor (Small).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Up Receptor (Small).png"; sourceTree = "<group>"; };
 		1E2DD2391910B5C2000F196A /* Up Receptor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Up Receptor.png"; sourceTree = "<group>"; };
 		1E2DD23A1910B5C2000F196A /* Up.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Up.gif; sourceTree = "<group>"; };
-		1E2DD24F1910B857000F196A /* EBRReceptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EBRReceptor.h; sourceTree = "<group>"; };
-		1E2DD2501910B857000F196A /* EBRReceptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EBRReceptor.m; sourceTree = "<group>"; };
 		1E319FED191B50EF00CCA757 /* walk_right_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = walk_right_1.png; sourceTree = "<group>"; };
 		1E319FEE191B50EF00CCA757 /* walk_right_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = walk_right_2.png; sourceTree = "<group>"; };
 		1E319FEF191B50EF00CCA757 /* walk_right_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = walk_right_3.png; sourceTree = "<group>"; };
@@ -199,6 +196,8 @@
 		1ECA3DF8191B986300A6C4C8 /* rainbow.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = rainbow.mid; sourceTree = "<group>"; };
 		1ECA3DFB191C060500A6C4C8 /* fantasy.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = fantasy.mid; sourceTree = "<group>"; };
 		1ECA3DFE191C060A00A6C4C8 /* fantasy2.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = fantasy2.mid; sourceTree = "<group>"; };
+		1EE390EC191C1A0A009C1F93 /* EBRMySceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EBRMySceneDelegate.h; sourceTree = "<group>"; };
+		1EE390ED191C1B02009C1F93 /* MIDIPlayerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MIDIPlayerDelegate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -265,13 +264,12 @@
 				1E2DD1FF1910B4A4000F196A /* Main.storyboard */,
 				1E2DD2021910B4A4000F196A /* EBRViewController.h */,
 				1E2DD2031910B4A4000F196A /* EBRViewController.m */,
+				1EE390EC191C1A0A009C1F93 /* EBRMySceneDelegate.h */,
 				1E2DD2051910B4A4000F196A /* EBRMyScene.h */,
 				1E2DD2061910B4A4000F196A /* EBRMyScene.m */,
-				1E2DD24F1910B857000F196A /* EBRReceptor.h */,
-				1E2DD2501910B857000F196A /* EBRReceptor.m */,
-				1E2DD2081910B4A4000F196A /* Spaceship.png */,
 				1E07070D191AE73900AB146D /* EBRSpriteNode.h */,
 				1E07070E191AE73900AB146D /* EBRSpriteNode.m */,
+				1EE390ED191C1B02009C1F93 /* MIDIPlayerDelegate.h */,
 				1E4AB6ED191A19AE006A2A0E /* MIDIPlayer.h */,
 				1E4AB6EE191A19AE006A2A0E /* MIDIPlayer.m */,
 				1E2DD20A1910B4A4000F196A /* Images.xcassets */,
@@ -293,6 +291,7 @@
 				1E31A012191B596D00CCA757 /* walk_left */,
 				1E319FFF191B595D00CCA757 /* walk_down */,
 				1E319FEC191B50EF00CCA757 /* walk_right */,
+				1E2DD2081910B4A4000F196A /* Spaceship.png */,
 				1E2DD2271910B5C2000F196A /* Down (Half).gif */,
 				1E2DD2281910B5C2000F196A /* Down Destroyed.png */,
 				1E2DD2291910B5C2000F196A /* Down Receptor (Small).png */,
@@ -580,7 +579,6 @@
 				1E2DD2071910B4A4000F196A /* EBRMyScene.m in Sources */,
 				1E07070F191AE73900AB146D /* EBRSpriteNode.m in Sources */,
 				1E2DD1FE1910B4A4000F196A /* EBRAppDelegate.m in Sources */,
-				1E2DD2511910B857000F196A /* EBRReceptor.m in Sources */,
 				1E2DD2041910B4A4000F196A /* EBRViewController.m in Sources */,
 				1E2DD1FA1910B4A3000F196A /* main.m in Sources */,
 				1E4AB6EF191A19AE006A2A0E /* MIDIPlayer.m in Sources */,
