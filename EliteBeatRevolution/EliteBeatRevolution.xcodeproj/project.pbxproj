@@ -81,19 +81,74 @@
 		1E31A035191B597300CCA757 /* walk_up_7.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E31A02C191B597300CCA757 /* walk_up_7.png */; };
 		1E31A036191B597300CCA757 /* walk_up_8.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E31A02D191B597300CCA757 /* walk_up_8.png */; };
 		1E31A037191B597300CCA757 /* walk_up_9.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E31A02E191B597300CCA757 /* walk_up_9.png */; };
+		1E373D72191C6C0C00476C24 /* FF7.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = 1E373D71191C6C0C00476C24 /* FF7.sf2 */; };
+		1E373D73191C6C0C00476C24 /* FF7.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = 1E373D71191C6C0C00476C24 /* FF7.sf2 */; };
+		1E373D75191C6C1700476C24 /* baby.mid in Resources */ = {isa = PBXBuildFile; fileRef = 1E373D74191C6C1700476C24 /* baby.mid */; };
+		1E373D76191C6C1700476C24 /* baby.mid in Resources */ = {isa = PBXBuildFile; fileRef = 1E373D74191C6C1700476C24 /* baby.mid */; };
+		1E373D78191C6C1F00476C24 /* rainbow.mid in Resources */ = {isa = PBXBuildFile; fileRef = 1E373D77191C6C1F00476C24 /* rainbow.mid */; };
+		1E373D79191C6C1F00476C24 /* rainbow.mid in Resources */ = {isa = PBXBuildFile; fileRef = 1E373D77191C6C1F00476C24 /* rainbow.mid */; };
+		1E373D7B191C6C2E00476C24 /* woman.mid in Resources */ = {isa = PBXBuildFile; fileRef = 1E373D7A191C6C2E00476C24 /* woman.mid */; };
+		1E373D7C191C6C2E00476C24 /* woman.mid in Resources */ = {isa = PBXBuildFile; fileRef = 1E373D7A191C6C2E00476C24 /* woman.mid */; };
+		1E373D7E191C6C3E00476C24 /* madworld.mid in Resources */ = {isa = PBXBuildFile; fileRef = 1E373D7D191C6C3E00476C24 /* madworld.mid */; };
+		1E373D7F191C6C3E00476C24 /* madworld.mid in Resources */ = {isa = PBXBuildFile; fileRef = 1E373D7D191C6C3E00476C24 /* madworld.mid */; };
+		1E373D95191C748400476C24 /* thegoodb.mid in Resources */ = {isa = PBXBuildFile; fileRef = 1E373D8A191C748400476C24 /* thegoodb.mid */; };
+		1E373D96191C748400476C24 /* thegoodb.mid in Resources */ = {isa = PBXBuildFile; fileRef = 1E373D8A191C748400476C24 /* thegoodb.mid */; };
+		1E3C6F5C191C817A00EFF406 /* varys_complete_bank.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = 1E3C6F5B191C817A00EFF406 /* varys_complete_bank.sf2 */; };
+		1E3C6F5D191C817A00EFF406 /* varys_complete_bank.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = 1E3C6F5B191C817A00EFF406 /* varys_complete_bank.sf2 */; };
 		1E4AB6EF191A19AE006A2A0E /* MIDIPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E4AB6EE191A19AE006A2A0E /* MIDIPlayer.m */; };
-		1E61D2DE191B8BA70013D1DC /* baby.mid in Resources */ = {isa = PBXBuildFile; fileRef = 1E61D2DB191B8BA70013D1DC /* baby.mid */; };
-		1E61D2DF191B8BA70013D1DC /* baby.mid in Resources */ = {isa = PBXBuildFile; fileRef = 1E61D2DB191B8BA70013D1DC /* baby.mid */; };
-		1E61D2E0191B8BA70013D1DC /* woman.mid in Resources */ = {isa = PBXBuildFile; fileRef = 1E61D2DC191B8BA70013D1DC /* woman.mid */; };
-		1E61D2E1191B8BA70013D1DC /* woman.mid in Resources */ = {isa = PBXBuildFile; fileRef = 1E61D2DC191B8BA70013D1DC /* woman.mid */; };
-		1E61D2E2191B8BA70013D1DC /* FF7.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = 1E61D2DD191B8BA70013D1DC /* FF7.sf2 */; };
-		1E61D2E3191B8BA70013D1DC /* FF7.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = 1E61D2DD191B8BA70013D1DC /* FF7.sf2 */; };
-		1ECA3DF9191B986300A6C4C8 /* rainbow.mid in Resources */ = {isa = PBXBuildFile; fileRef = 1ECA3DF8191B986300A6C4C8 /* rainbow.mid */; };
-		1ECA3DFA191B986300A6C4C8 /* rainbow.mid in Resources */ = {isa = PBXBuildFile; fileRef = 1ECA3DF8191B986300A6C4C8 /* rainbow.mid */; };
-		1ECA3DFC191C060500A6C4C8 /* fantasy.mid in Resources */ = {isa = PBXBuildFile; fileRef = 1ECA3DFB191C060500A6C4C8 /* fantasy.mid */; };
-		1ECA3DFD191C060500A6C4C8 /* fantasy.mid in Resources */ = {isa = PBXBuildFile; fileRef = 1ECA3DFB191C060500A6C4C8 /* fantasy.mid */; };
-		1ECA3DFF191C060A00A6C4C8 /* fantasy2.mid in Resources */ = {isa = PBXBuildFile; fileRef = 1ECA3DFE191C060A00A6C4C8 /* fantasy2.mid */; };
-		1ECA3E00191C060A00A6C4C8 /* fantasy2.mid in Resources */ = {isa = PBXBuildFile; fileRef = 1ECA3DFE191C060A00A6C4C8 /* fantasy2.mid */; };
+		1EB72628191CBDDE00D77F43 /* Billy_Joel_-_Piano_Man.mid in Resources */ = {isa = PBXBuildFile; fileRef = 1EB7261C191CBDDE00D77F43 /* Billy_Joel_-_Piano_Man.mid */; };
+		1EB72629191CBDDE00D77F43 /* Billy_Joel_-_River_of_Dreams.mid in Resources */ = {isa = PBXBuildFile; fileRef = 1EB7261D191CBDDE00D77F43 /* Billy_Joel_-_River_of_Dreams.mid */; };
+		1EB7262A191CBDDE00D77F43 /* Billy_Joel_-_She's_Got_a_Way.mid in Resources */ = {isa = PBXBuildFile; fileRef = 1EB7261E191CBDDE00D77F43 /* Billy_Joel_-_She's_Got_a_Way.mid */; };
+		1EB7262B191CBDDE00D77F43 /* Billy_Joel_-_Tell_Her_About_It.mid in Resources */ = {isa = PBXBuildFile; fileRef = 1EB7261F191CBDDE00D77F43 /* Billy_Joel_-_Tell_Her_About_It.mid */; };
+		1EB7262C191CBDDE00D77F43 /* Billy_Joel_-_The_Longest_Time.mid in Resources */ = {isa = PBXBuildFile; fileRef = 1EB72620191CBDDE00D77F43 /* Billy_Joel_-_The_Longest_Time.mid */; };
+		1EB7262D191CBDDE00D77F43 /* Billy_Joel_-_Uptown_Girl.mid in Resources */ = {isa = PBXBuildFile; fileRef = 1EB72621191CBDDE00D77F43 /* Billy_Joel_-_Uptown_Girl.mid */; };
+		1EB7262E191CBDDE00D77F43 /* david_bowie-space_oddity.mid in Resources */ = {isa = PBXBuildFile; fileRef = 1EB72622191CBDDE00D77F43 /* david_bowie-space_oddity.mid */; };
+		1EB7262F191CBDDE00D77F43 /* elton_john-candle_in_the_wind.mid in Resources */ = {isa = PBXBuildFile; fileRef = 1EB72623191CBDDE00D77F43 /* elton_john-candle_in_the_wind.mid */; };
+		1EB72631191CBDDE00D77F43 /* elton_john-dont_let_the_sun.mid in Resources */ = {isa = PBXBuildFile; fileRef = 1EB72625191CBDDE00D77F43 /* elton_john-dont_let_the_sun.mid */; };
+		1EB72635191CBEC000D77F43 /* Elton John - Rocket Man 1.mid in Resources */ = {isa = PBXBuildFile; fileRef = 1EB72634191CBEC000D77F43 /* Elton John - Rocket Man 1.mid */; };
+		1EB72636191CBEC000D77F43 /* Elton John - Rocket Man 1.mid in Resources */ = {isa = PBXBuildFile; fileRef = 1EB72634191CBEC000D77F43 /* Elton John - Rocket Man 1.mid */; };
+		1EB72638191CC6B600D77F43 /* landdown.mid in Resources */ = {isa = PBXBuildFile; fileRef = 1EB72637191CC6B600D77F43 /* landdown.mid */; };
+		1EB72639191CC6B600D77F43 /* landdown.mid in Resources */ = {isa = PBXBuildFile; fileRef = 1EB72637191CC6B600D77F43 /* landdown.mid */; };
+		1EB7263B191CC7BC00D77F43 /* ordinary.mid in Resources */ = {isa = PBXBuildFile; fileRef = 1EB7263A191CC7BC00D77F43 /* ordinary.mid */; };
+		1EB7263C191CC7BC00D77F43 /* ordinary.mid in Resources */ = {isa = PBXBuildFile; fileRef = 1EB7263A191CC7BC00D77F43 /* ordinary.mid */; };
+		1EB7263E191CC92600D77F43 /* Elton John - Tiny Dancer.mid in Resources */ = {isa = PBXBuildFile; fileRef = 1EB7263D191CC92600D77F43 /* Elton John - Tiny Dancer.mid */; };
+		1EB7263F191CC92600D77F43 /* Elton John - Tiny Dancer.mid in Resources */ = {isa = PBXBuildFile; fileRef = 1EB7263D191CC92600D77F43 /* Elton John - Tiny Dancer.mid */; };
+		1EB72641191CCBC200D77F43 /* herecoms.mid in Resources */ = {isa = PBXBuildFile; fileRef = 1EB72640191CCBC200D77F43 /* herecoms.mid */; };
+		1EB72642191CCBC200D77F43 /* herecoms.mid in Resources */ = {isa = PBXBuildFile; fileRef = 1EB72640191CCBC200D77F43 /* herecoms.mid */; };
+		1EB72644191CCC0F00D77F43 /* ticket.mid in Resources */ = {isa = PBXBuildFile; fileRef = 1EB72643191CCC0F00D77F43 /* ticket.mid */; };
+		1EB72645191CCC0F00D77F43 /* ticket.mid in Resources */ = {isa = PBXBuildFile; fileRef = 1EB72643191CCC0F00D77F43 /* ticket.mid */; };
+		1EB72647191CCC5200D77F43 /* yestrday.mid in Resources */ = {isa = PBXBuildFile; fileRef = 1EB72646191CCC5200D77F43 /* yestrday.mid */; };
+		1EB72648191CCC5200D77F43 /* yestrday.mid in Resources */ = {isa = PBXBuildFile; fileRef = 1EB72646191CCC5200D77F43 /* yestrday.mid */; };
+		1EB7264A191CCC9100D77F43 /* norwood.mid in Resources */ = {isa = PBXBuildFile; fileRef = 1EB72649191CCC9100D77F43 /* norwood.mid */; };
+		1EB7264B191CCC9100D77F43 /* norwood.mid in Resources */ = {isa = PBXBuildFile; fileRef = 1EB72649191CCC9100D77F43 /* norwood.mid */; };
+		1EB7264D191CCCC000D77F43 /* inmylife.mid in Resources */ = {isa = PBXBuildFile; fileRef = 1EB7264C191CCCBF00D77F43 /* inmylife.mid */; };
+		1EB7264E191CCCC000D77F43 /* inmylife.mid in Resources */ = {isa = PBXBuildFile; fileRef = 1EB7264C191CCCBF00D77F43 /* inmylife.mid */; };
+		1EB72650191CCCF800D77F43 /* eleanorr.mid in Resources */ = {isa = PBXBuildFile; fileRef = 1EB7264F191CCCF800D77F43 /* eleanorr.mid */; };
+		1EB72651191CCCF800D77F43 /* eleanorr.mid in Resources */ = {isa = PBXBuildFile; fileRef = 1EB7264F191CCCF800D77F43 /* eleanorr.mid */; };
+		1EB72653191CCD2000D77F43 /* whenim64.mid in Resources */ = {isa = PBXBuildFile; fileRef = 1EB72652191CCD2000D77F43 /* whenim64.mid */; };
+		1EB72654191CCD2000D77F43 /* whenim64.mid in Resources */ = {isa = PBXBuildFile; fileRef = 1EB72652191CCD2000D77F43 /* whenim64.mid */; };
+		1EB72656191CCD4A00D77F43 /* pennyln.mid in Resources */ = {isa = PBXBuildFile; fileRef = 1EB72655191CCD4A00D77F43 /* pennyln.mid */; };
+		1EB72657191CCD4A00D77F43 /* pennyln.mid in Resources */ = {isa = PBXBuildFile; fileRef = 1EB72655191CCD4A00D77F43 /* pennyln.mid */; };
+		1EB72659191CCD8D00D77F43 /* alluneed.mid in Resources */ = {isa = PBXBuildFile; fileRef = 1EB72658191CCD8D00D77F43 /* alluneed.mid */; };
+		1EB7265A191CCD8D00D77F43 /* alluneed.mid in Resources */ = {isa = PBXBuildFile; fileRef = 1EB72658191CCD8D00D77F43 /* alluneed.mid */; };
+		1EB7265C191CCDE900D77F43 /* strawbf.mid in Resources */ = {isa = PBXBuildFile; fileRef = 1EB7265B191CCDE900D77F43 /* strawbf.mid */; };
+		1EB7265D191CCDE900D77F43 /* strawbf.mid in Resources */ = {isa = PBXBuildFile; fileRef = 1EB7265B191CCDE900D77F43 /* strawbf.mid */; };
+		1EB7265F191CCE1100D77F43 /* hellogby.mid in Resources */ = {isa = PBXBuildFile; fileRef = 1EB7265E191CCE1100D77F43 /* hellogby.mid */; };
+		1EB72660191CCE1100D77F43 /* hellogby.mid in Resources */ = {isa = PBXBuildFile; fileRef = 1EB7265E191CCE1100D77F43 /* hellogby.mid */; };
+		1EB72662191CCE3000D77F43 /* obladi.mid in Resources */ = {isa = PBXBuildFile; fileRef = 1EB72661191CCE3000D77F43 /* obladi.mid */; };
+		1EB72663191CCE3000D77F43 /* obladi.mid in Resources */ = {isa = PBXBuildFile; fileRef = 1EB72661191CCE3000D77F43 /* obladi.mid */; };
+		1EB72665191CCE6300D77F43 /* whilegtr.mid in Resources */ = {isa = PBXBuildFile; fileRef = 1EB72664191CCE6300D77F43 /* whilegtr.mid */; };
+		1EB72666191CCE6300D77F43 /* whilegtr.mid in Resources */ = {isa = PBXBuildFile; fileRef = 1EB72664191CCE6300D77F43 /* whilegtr.mid */; };
+		1EB72668191CCE8600D77F43 /* blckbird.mid in Resources */ = {isa = PBXBuildFile; fileRef = 1EB72667191CCE8600D77F43 /* blckbird.mid */; };
+		1EB72669191CCE8600D77F43 /* blckbird.mid in Resources */ = {isa = PBXBuildFile; fileRef = 1EB72667191CCE8600D77F43 /* blckbird.mid */; };
+		1EB7266B191CCEB000D77F43 /* somethng.mid in Resources */ = {isa = PBXBuildFile; fileRef = 1EB7266A191CCEB000D77F43 /* somethng.mid */; };
+		1EB7266C191CCEB000D77F43 /* somethng.mid in Resources */ = {isa = PBXBuildFile; fileRef = 1EB7266A191CCEB000D77F43 /* somethng.mid */; };
+		1EB7266E191CCECB00D77F43 /* acrssunv.mid in Resources */ = {isa = PBXBuildFile; fileRef = 1EB7266D191CCECB00D77F43 /* acrssunv.mid */; };
+		1EB7266F191CCECB00D77F43 /* acrssunv.mid in Resources */ = {isa = PBXBuildFile; fileRef = 1EB7266D191CCECB00D77F43 /* acrssunv.mid */; };
+		1EB72671191CCEE700D77F43 /* letitdb.mid in Resources */ = {isa = PBXBuildFile; fileRef = 1EB72670191CCEE700D77F43 /* letitdb.mid */; };
+		1EB72672191CCEE700D77F43 /* letitdb.mid in Resources */ = {isa = PBXBuildFile; fileRef = 1EB72670191CCEE700D77F43 /* letitdb.mid */; };
+		1EB72674191CCF1D00D77F43 /* lawroad.mid in Resources */ = {isa = PBXBuildFile; fileRef = 1EB72673191CCF1D00D77F43 /* lawroad.mid */; };
+		1EB72675191CCF1D00D77F43 /* lawroad.mid in Resources */ = {isa = PBXBuildFile; fileRef = 1EB72673191CCF1D00D77F43 /* lawroad.mid */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -188,14 +243,46 @@
 		1E31A02C191B597300CCA757 /* walk_up_7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = walk_up_7.png; sourceTree = "<group>"; };
 		1E31A02D191B597300CCA757 /* walk_up_8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = walk_up_8.png; sourceTree = "<group>"; };
 		1E31A02E191B597300CCA757 /* walk_up_9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = walk_up_9.png; sourceTree = "<group>"; };
+		1E373D71191C6C0C00476C24 /* FF7.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = FF7.sf2; sourceTree = "<group>"; };
+		1E373D74191C6C1700476C24 /* baby.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = baby.mid; sourceTree = "<group>"; };
+		1E373D77191C6C1F00476C24 /* rainbow.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = rainbow.mid; sourceTree = "<group>"; };
+		1E373D7A191C6C2E00476C24 /* woman.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = woman.mid; sourceTree = "<group>"; };
+		1E373D7D191C6C3E00476C24 /* madworld.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = madworld.mid; sourceTree = "<group>"; };
+		1E373D8A191C748400476C24 /* thegoodb.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = thegoodb.mid; sourceTree = "<group>"; };
+		1E3C6F5B191C817A00EFF406 /* varys_complete_bank.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = varys_complete_bank.sf2; sourceTree = "<group>"; };
 		1E4AB6ED191A19AE006A2A0E /* MIDIPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIDIPlayer.h; sourceTree = "<group>"; };
 		1E4AB6EE191A19AE006A2A0E /* MIDIPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIDIPlayer.m; sourceTree = "<group>"; };
-		1E61D2DB191B8BA70013D1DC /* baby.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = baby.mid; sourceTree = "<group>"; };
-		1E61D2DC191B8BA70013D1DC /* woman.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = woman.mid; sourceTree = "<group>"; };
-		1E61D2DD191B8BA70013D1DC /* FF7.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = FF7.sf2; sourceTree = "<group>"; };
-		1ECA3DF8191B986300A6C4C8 /* rainbow.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = rainbow.mid; sourceTree = "<group>"; };
-		1ECA3DFB191C060500A6C4C8 /* fantasy.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = fantasy.mid; sourceTree = "<group>"; };
-		1ECA3DFE191C060A00A6C4C8 /* fantasy2.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = fantasy2.mid; sourceTree = "<group>"; };
+		1EB7261C191CBDDE00D77F43 /* Billy_Joel_-_Piano_Man.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = "Billy_Joel_-_Piano_Man.mid"; sourceTree = "<group>"; };
+		1EB7261D191CBDDE00D77F43 /* Billy_Joel_-_River_of_Dreams.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = "Billy_Joel_-_River_of_Dreams.mid"; sourceTree = "<group>"; };
+		1EB7261E191CBDDE00D77F43 /* Billy_Joel_-_She's_Got_a_Way.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = "Billy_Joel_-_She's_Got_a_Way.mid"; sourceTree = "<group>"; };
+		1EB7261F191CBDDE00D77F43 /* Billy_Joel_-_Tell_Her_About_It.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = "Billy_Joel_-_Tell_Her_About_It.mid"; sourceTree = "<group>"; };
+		1EB72620191CBDDE00D77F43 /* Billy_Joel_-_The_Longest_Time.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = "Billy_Joel_-_The_Longest_Time.mid"; sourceTree = "<group>"; };
+		1EB72621191CBDDE00D77F43 /* Billy_Joel_-_Uptown_Girl.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = "Billy_Joel_-_Uptown_Girl.mid"; sourceTree = "<group>"; };
+		1EB72622191CBDDE00D77F43 /* david_bowie-space_oddity.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = "david_bowie-space_oddity.mid"; sourceTree = "<group>"; };
+		1EB72623191CBDDE00D77F43 /* elton_john-candle_in_the_wind.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = "elton_john-candle_in_the_wind.mid"; sourceTree = "<group>"; };
+		1EB72625191CBDDE00D77F43 /* elton_john-dont_let_the_sun.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = "elton_john-dont_let_the_sun.mid"; sourceTree = "<group>"; };
+		1EB72634191CBEC000D77F43 /* Elton John - Rocket Man 1.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = "Elton John - Rocket Man 1.mid"; sourceTree = "<group>"; };
+		1EB72637191CC6B600D77F43 /* landdown.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = landdown.mid; sourceTree = "<group>"; };
+		1EB7263A191CC7BC00D77F43 /* ordinary.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = ordinary.mid; sourceTree = "<group>"; };
+		1EB7263D191CC92600D77F43 /* Elton John - Tiny Dancer.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = "Elton John - Tiny Dancer.mid"; sourceTree = "<group>"; };
+		1EB72640191CCBC200D77F43 /* herecoms.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = herecoms.mid; sourceTree = "<group>"; };
+		1EB72643191CCC0F00D77F43 /* ticket.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = ticket.mid; sourceTree = "<group>"; };
+		1EB72646191CCC5200D77F43 /* yestrday.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = yestrday.mid; sourceTree = "<group>"; };
+		1EB72649191CCC9100D77F43 /* norwood.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = norwood.mid; sourceTree = "<group>"; };
+		1EB7264C191CCCBF00D77F43 /* inmylife.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = inmylife.mid; sourceTree = "<group>"; };
+		1EB7264F191CCCF800D77F43 /* eleanorr.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = eleanorr.mid; sourceTree = "<group>"; };
+		1EB72652191CCD2000D77F43 /* whenim64.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = whenim64.mid; sourceTree = "<group>"; };
+		1EB72655191CCD4A00D77F43 /* pennyln.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = pennyln.mid; sourceTree = "<group>"; };
+		1EB72658191CCD8D00D77F43 /* alluneed.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = alluneed.mid; sourceTree = "<group>"; };
+		1EB7265B191CCDE900D77F43 /* strawbf.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = strawbf.mid; sourceTree = "<group>"; };
+		1EB7265E191CCE1100D77F43 /* hellogby.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = hellogby.mid; sourceTree = "<group>"; };
+		1EB72661191CCE3000D77F43 /* obladi.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = obladi.mid; sourceTree = "<group>"; };
+		1EB72664191CCE6300D77F43 /* whilegtr.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = whilegtr.mid; sourceTree = "<group>"; };
+		1EB72667191CCE8600D77F43 /* blckbird.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = blckbird.mid; sourceTree = "<group>"; };
+		1EB7266A191CCEB000D77F43 /* somethng.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = somethng.mid; sourceTree = "<group>"; };
+		1EB7266D191CCECB00D77F43 /* acrssunv.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = acrssunv.mid; sourceTree = "<group>"; };
+		1EB72670191CCEE700D77F43 /* letitdb.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = letitdb.mid; sourceTree = "<group>"; };
+		1EB72673191CCF1D00D77F43 /* lawroad.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = lawroad.mid; sourceTree = "<group>"; };
 		1EE390EC191C1A0A009C1F93 /* EBRMySceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EBRMySceneDelegate.h; sourceTree = "<group>"; };
 		1EE390ED191C1B02009C1F93 /* MIDIPlayerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MIDIPlayerDelegate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -281,12 +368,45 @@
 		1E2DD1F41910B4A3000F196A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				1E61D2DB191B8BA70013D1DC /* baby.mid */,
-				1E61D2DC191B8BA70013D1DC /* woman.mid */,
-				1ECA3DF8191B986300A6C4C8 /* rainbow.mid */,
-				1ECA3DFB191C060500A6C4C8 /* fantasy.mid */,
-				1ECA3DFE191C060A00A6C4C8 /* fantasy2.mid */,
-				1E61D2DD191B8BA70013D1DC /* FF7.sf2 */,
+				1E373D71191C6C0C00476C24 /* FF7.sf2 */,
+				1E3C6F5B191C817A00EFF406 /* varys_complete_bank.sf2 */,
+				1E373D74191C6C1700476C24 /* baby.mid */,
+				1E373D77191C6C1F00476C24 /* rainbow.mid */,
+				1E373D7A191C6C2E00476C24 /* woman.mid */,
+				1E373D7D191C6C3E00476C24 /* madworld.mid */,
+				1E373D8A191C748400476C24 /* thegoodb.mid */,
+				1EB72637191CC6B600D77F43 /* landdown.mid */,
+				1EB7263A191CC7BC00D77F43 /* ordinary.mid */,
+				1EB7261C191CBDDE00D77F43 /* Billy_Joel_-_Piano_Man.mid */,
+				1EB7261D191CBDDE00D77F43 /* Billy_Joel_-_River_of_Dreams.mid */,
+				1EB7261E191CBDDE00D77F43 /* Billy_Joel_-_She's_Got_a_Way.mid */,
+				1EB7261F191CBDDE00D77F43 /* Billy_Joel_-_Tell_Her_About_It.mid */,
+				1EB72620191CBDDE00D77F43 /* Billy_Joel_-_The_Longest_Time.mid */,
+				1EB72621191CBDDE00D77F43 /* Billy_Joel_-_Uptown_Girl.mid */,
+				1EB72622191CBDDE00D77F43 /* david_bowie-space_oddity.mid */,
+				1EB72623191CBDDE00D77F43 /* elton_john-candle_in_the_wind.mid */,
+				1EB72625191CBDDE00D77F43 /* elton_john-dont_let_the_sun.mid */,
+				1EB72634191CBEC000D77F43 /* Elton John - Rocket Man 1.mid */,
+				1EB7263D191CC92600D77F43 /* Elton John - Tiny Dancer.mid */,
+				1EB7264C191CCCBF00D77F43 /* inmylife.mid */,
+				1EB72646191CCC5200D77F43 /* yestrday.mid */,
+				1EB7264F191CCCF800D77F43 /* eleanorr.mid */,
+				1EB72652191CCD2000D77F43 /* whenim64.mid */,
+				1EB72655191CCD4A00D77F43 /* pennyln.mid */,
+				1EB72643191CCC0F00D77F43 /* ticket.mid */,
+				1EB72658191CCD8D00D77F43 /* alluneed.mid */,
+				1EB72649191CCC9100D77F43 /* norwood.mid */,
+				1EB72640191CCBC200D77F43 /* herecoms.mid */,
+				1EB7265B191CCDE900D77F43 /* strawbf.mid */,
+				1EB7265E191CCE1100D77F43 /* hellogby.mid */,
+				1EB72661191CCE3000D77F43 /* obladi.mid */,
+				1EB72664191CCE6300D77F43 /* whilegtr.mid */,
+				1EB72667191CCE8600D77F43 /* blckbird.mid */,
+				1EB7266A191CCEB000D77F43 /* somethng.mid */,
+				1EB7266D191CCECB00D77F43 /* acrssunv.mid */,
+				1EB72670191CCEE700D77F43 /* letitdb.mid */,
+				1EB72673191CCF1D00D77F43 /* lawroad.mid */,
+				1EB72633191CBDE400D77F43 /* New */,
 				1E31A025191B597300CCA757 /* walk_up */,
 				1E31A012191B596D00CCA757 /* walk_left */,
 				1E319FFF191B595D00CCA757 /* walk_down */,
@@ -402,6 +522,13 @@
 			path = walk_up;
 			sourceTree = "<group>";
 		};
+		1EB72633191CBDE400D77F43 /* New */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = New;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -486,70 +613,102 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1EB72650191CCCF800D77F43 /* eleanorr.mid in Resources */,
 				1E2DD2471910B5C2000F196A /* Right Receptor (Small).png in Resources */,
 				1E31A010191B595D00CCA757 /* walk_down_8.png in Resources */,
 				1E2DD2401910B5C2000F196A /* Left (Half).gif in Resources */,
 				1E2DD2421910B5C2000F196A /* Left Receptor (Small).png in Resources */,
+				1EB72641191CCBC200D77F43 /* herecoms.mid in Resources */,
 				1E319FFA191B50EF00CCA757 /* walk_right_5.png in Resources */,
 				1E319FFB191B50EF00CCA757 /* walk_right_6.png in Resources */,
-				1E61D2DE191B8BA70013D1DC /* baby.mid in Resources */,
+				1E373D7E191C6C3E00476C24 /* madworld.mid in Resources */,
+				1EB7266E191CCECB00D77F43 /* acrssunv.mid in Resources */,
 				1E2DD23E1910B5C2000F196A /* Down Receptor.png in Resources */,
 				1E31A033191B597300CCA757 /* walk_up_5.png in Resources */,
+				1E3C6F5C191C817A00EFF406 /* varys_complete_bank.sf2 in Resources */,
+				1EB7263B191CC7BC00D77F43 /* ordinary.mid in Resources */,
 				1E2DD1F81910B4A3000F196A /* InfoPlist.strings in Resources */,
 				1E31A011191B595D00CCA757 /* walk_down_9.png in Resources */,
 				1E2DD23B1910B5C2000F196A /* Down (Half).gif in Resources */,
+				1EB7264A191CCC9100D77F43 /* norwood.mid in Resources */,
 				1E2DD20B1910B4A4000F196A /* Images.xcassets in Resources */,
+				1EB7265C191CCDE900D77F43 /* strawbf.mid in Resources */,
 				1E31A034191B597300CCA757 /* walk_up_6.png in Resources */,
 				1E2DD2451910B5C2000F196A /* Right (Half).gif in Resources */,
 				1E319FF6191B50EF00CCA757 /* walk_right_1.png in Resources */,
 				1E31A00A191B595D00CCA757 /* walk_down_2.png in Resources */,
+				1EB7263E191CC92600D77F43 /* Elton John - Tiny Dancer.mid in Resources */,
+				1EB7264D191CCCC000D77F43 /* inmylife.mid in Resources */,
+				1EB72647191CCC5200D77F43 /* yestrday.mid in Resources */,
 				1E31A01F191B596D00CCA757 /* walk_left_4.png in Resources */,
-				1E61D2E2191B8BA70013D1DC /* FF7.sf2 in Resources */,
+				1EB72638191CC6B600D77F43 /* landdown.mid in Resources */,
 				1E2DD2461910B5C2000F196A /* Right Destroyed.png in Resources */,
 				1E31A00C191B595D00CCA757 /* walk_down_4.png in Resources */,
+				1E373D7B191C6C2E00476C24 /* woman.mid in Resources */,
+				1EB72628191CBDDE00D77F43 /* Billy_Joel_-_Piano_Man.mid in Resources */,
 				1E31A032191B597300CCA757 /* walk_up_4.png in Resources */,
 				1E319FF8191B50EF00CCA757 /* walk_right_3.png in Resources */,
 				1E2DD2431910B5C2000F196A /* Left Receptor.png in Resources */,
 				1E2DD24B1910B5C2000F196A /* Up Destroyed.png in Resources */,
 				1E319FFE191B50EF00CCA757 /* walk_right_9.png in Resources */,
+				1EB72668191CCE8600D77F43 /* blckbird.mid in Resources */,
+				1EB7262F191CBDDE00D77F43 /* elton_john-candle_in_the_wind.mid in Resources */,
 				1E31A023191B596D00CCA757 /* walk_left_8.png in Resources */,
 				1E319FFD191B50EF00CCA757 /* walk_right_8.png in Resources */,
+				1EB72656191CCD4A00D77F43 /* pennyln.mid in Resources */,
 				1E31A00F191B595D00CCA757 /* walk_down_7.png in Resources */,
 				1E2DD2441910B5C2000F196A /* Left.gif in Resources */,
 				1E31A020191B596D00CCA757 /* walk_left_5.png in Resources */,
 				1E2DD2091910B4A4000F196A /* Spaceship.png in Resources */,
 				1E2DD23F1910B5C2000F196A /* Down.gif in Resources */,
+				1EB7262E191CBDDE00D77F43 /* david_bowie-space_oddity.mid in Resources */,
 				1E31A00E191B595D00CCA757 /* walk_down_6.png in Resources */,
+				1EB72629191CBDDE00D77F43 /* Billy_Joel_-_River_of_Dreams.mid in Resources */,
+				1E373D95191C748400476C24 /* thegoodb.mid in Resources */,
+				1EB72644191CCC0F00D77F43 /* ticket.mid in Resources */,
 				1E31A01E191B596D00CCA757 /* walk_left_3.png in Resources */,
 				1E31A00B191B595D00CCA757 /* walk_down_3.png in Resources */,
-				1ECA3DFF191C060A00A6C4C8 /* fantasy2.mid in Resources */,
+				1EB72662191CCE3000D77F43 /* obladi.mid in Resources */,
 				1E319FF7191B50EF00CCA757 /* walk_right_2.png in Resources */,
-				1ECA3DF9191B986300A6C4C8 /* rainbow.mid in Resources */,
 				1E2DD2481910B5C2000F196A /* Right Receptor.png in Resources */,
 				1E2DD24E1910B5C2000F196A /* Up.gif in Resources */,
 				1E31A030191B597300CCA757 /* walk_up_2.png in Resources */,
+				1EB72653191CCD2000D77F43 /* whenim64.mid in Resources */,
 				1E2DD24C1910B5C2000F196A /* Up Receptor (Small).png in Resources */,
 				1E31A031191B597300CCA757 /* walk_up_3.png in Resources */,
 				1E31A00D191B595D00CCA757 /* walk_down_5.png in Resources */,
 				1E31A036191B597300CCA757 /* walk_up_8.png in Resources */,
+				1EB72659191CCD8D00D77F43 /* alluneed.mid in Resources */,
 				1E2DD24A1910B5C2000F196A /* Up (Half).gif in Resources */,
+				1EB72631191CBDDE00D77F43 /* elton_john-dont_let_the_sun.mid in Resources */,
+				1E373D72191C6C0C00476C24 /* FF7.sf2 in Resources */,
+				1EB7262B191CBDDE00D77F43 /* Billy_Joel_-_Tell_Her_About_It.mid in Resources */,
 				1E2DD23C1910B5C2000F196A /* Down Destroyed.png in Resources */,
 				1E31A01C191B596D00CCA757 /* walk_left_1.png in Resources */,
 				1E31A035191B597300CCA757 /* walk_up_7.png in Resources */,
+				1EB72665191CCE6300D77F43 /* whilegtr.mid in Resources */,
 				1E31A01D191B596D00CCA757 /* walk_left_2.png in Resources */,
 				1E31A021191B596D00CCA757 /* walk_left_6.png in Resources */,
 				1E2DD2491910B5C2000F196A /* Right.gif in Resources */,
+				1EB72674191CCF1D00D77F43 /* lawroad.mid in Resources */,
+				1E373D75191C6C1700476C24 /* baby.mid in Resources */,
+				1EB7262A191CBDDE00D77F43 /* Billy_Joel_-_She's_Got_a_Way.mid in Resources */,
+				1EB7266B191CCEB000D77F43 /* somethng.mid in Resources */,
+				1EB7262D191CBDDE00D77F43 /* Billy_Joel_-_Uptown_Girl.mid in Resources */,
 				1E31A024191B596D00CCA757 /* walk_left_9.png in Resources */,
 				1E319FFC191B50EF00CCA757 /* walk_right_7.png in Resources */,
+				1EB72635191CBEC000D77F43 /* Elton John - Rocket Man 1.mid in Resources */,
+				1EB7265F191CCE1100D77F43 /* hellogby.mid in Resources */,
 				1E2DD23D1910B5C2000F196A /* Down Receptor (Small).png in Resources */,
 				1E31A037191B597300CCA757 /* walk_up_9.png in Resources */,
+				1E373D78191C6C1F00476C24 /* rainbow.mid in Resources */,
+				1EB7262C191CBDDE00D77F43 /* Billy_Joel_-_The_Longest_Time.mid in Resources */,
 				1E2DD2411910B5C2000F196A /* Left Destroyed.png in Resources */,
 				1E319FF9191B50EF00CCA757 /* walk_right_4.png in Resources */,
+				1EB72671191CCEE700D77F43 /* letitdb.mid in Resources */,
 				1E31A009191B595D00CCA757 /* walk_down_1.png in Resources */,
 				1E31A022191B596D00CCA757 /* walk_left_7.png in Resources */,
-				1E61D2E0191B8BA70013D1DC /* woman.mid in Resources */,
 				1E31A02F191B597300CCA757 /* walk_up_1.png in Resources */,
-				1ECA3DFC191C060500A6C4C8 /* fantasy.mid in Resources */,
 				1E2DD2011910B4A4000F196A /* Main.storyboard in Resources */,
 				1E2DD24D1910B5C2000F196A /* Up Receptor.png in Resources */,
 			);
@@ -559,13 +718,36 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1E61D2DF191B8BA70013D1DC /* baby.mid in Resources */,
+				1E373D96191C748400476C24 /* thegoodb.mid in Resources */,
+				1EB7263C191CC7BC00D77F43 /* ordinary.mid in Resources */,
+				1EB72642191CCBC200D77F43 /* herecoms.mid in Resources */,
+				1E373D76191C6C1700476C24 /* baby.mid in Resources */,
+				1EB7263F191CC92600D77F43 /* Elton John - Tiny Dancer.mid in Resources */,
+				1EB72663191CCE3000D77F43 /* obladi.mid in Resources */,
+				1EB7264E191CCCC000D77F43 /* inmylife.mid in Resources */,
+				1EB7265D191CCDE900D77F43 /* strawbf.mid in Resources */,
+				1EB7265A191CCD8D00D77F43 /* alluneed.mid in Resources */,
+				1EB72654191CCD2000D77F43 /* whenim64.mid in Resources */,
+				1E3C6F5D191C817A00EFF406 /* varys_complete_bank.sf2 in Resources */,
+				1EB72669191CCE8600D77F43 /* blckbird.mid in Resources */,
+				1EB72639191CC6B600D77F43 /* landdown.mid in Resources */,
+				1EB72675191CCF1D00D77F43 /* lawroad.mid in Resources */,
+				1EB72660191CCE1100D77F43 /* hellogby.mid in Resources */,
+				1EB72651191CCCF800D77F43 /* eleanorr.mid in Resources */,
+				1E373D7C191C6C2E00476C24 /* woman.mid in Resources */,
+				1EB72666191CCE6300D77F43 /* whilegtr.mid in Resources */,
+				1EB72645191CCC0F00D77F43 /* ticket.mid in Resources */,
+				1E373D7F191C6C3E00476C24 /* madworld.mid in Resources */,
+				1E373D79191C6C1F00476C24 /* rainbow.mid in Resources */,
+				1EB7264B191CCC9100D77F43 /* norwood.mid in Resources */,
+				1EB7266F191CCECB00D77F43 /* acrssunv.mid in Resources */,
+				1EB72657191CCD4A00D77F43 /* pennyln.mid in Resources */,
+				1EB72648191CCC5200D77F43 /* yestrday.mid in Resources */,
 				1E2DD21C1910B4A4000F196A /* InfoPlist.strings in Resources */,
-				1ECA3DFA191B986300A6C4C8 /* rainbow.mid in Resources */,
-				1E61D2E1191B8BA70013D1DC /* woman.mid in Resources */,
-				1ECA3E00191C060A00A6C4C8 /* fantasy2.mid in Resources */,
-				1E61D2E3191B8BA70013D1DC /* FF7.sf2 in Resources */,
-				1ECA3DFD191C060500A6C4C8 /* fantasy.mid in Resources */,
+				1E373D73191C6C0C00476C24 /* FF7.sf2 in Resources */,
+				1EB7266C191CCEB000D77F43 /* somethng.mid in Resources */,
+				1EB72636191CBEC000D77F43 /* Elton John - Rocket Man 1.mid in Resources */,
+				1EB72672191CCEE700D77F43 /* letitdb.mid in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

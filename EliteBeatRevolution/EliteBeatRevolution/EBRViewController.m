@@ -6,15 +6,18 @@
 //  Copyright (c) 2014 Raymond Louie. All rights reserved.
 //
 
+#import <AVFoundation/AVFoundation.h>
 #import "EBRViewController.h"
 #import "EBRMyScene.h"
 #import "MIDIPlayer.h"
 
-@interface EBRViewController ()
+@interface EBRViewController () <AVSpeechSynthesizerDelegate>
 
 @property (strong, nonatomic) EBRMyScene *myScene;
 @property (strong, nonatomic) MIDIPlayer *notePlayer;
 @property (strong, nonatomic) MIDIPlayer *soundPlayer;
+
+@property (strong, nonatomic) AVSpeechSynthesizer *talker;
 
 @end
 

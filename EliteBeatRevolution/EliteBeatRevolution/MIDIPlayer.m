@@ -104,6 +104,7 @@ static void MyMIDIReadProc(const MIDIPacketList *pktlist,
     BOOL madeVisibleNote = NO;
     
     MIDIPlayer *midiPlayer = (__bridge MIDIPlayer *)(refCon);
+    
     AudioUnit player = (AudioUnit) midiPlayer.samplerUnit;
     
     MIDIPacket *packet = (MIDIPacket *)pktlist->packet;
@@ -168,7 +169,7 @@ static void MyMIDIReadProc(const MIDIPacketList *pktlist,
                 madeVisibleNote = YES;
             } else {
 #endif
-                if ((int)controller != MUTE_CHANNEL)
+                if ((int)controller <= MUTE_CHANNEL && (int)controller != MIDI_CHANNEL)
                 [midiPlayer.delegate showNote:(char)note withStatus:(char)midiStatus andVelocity:(char)velocity andVisibility:NO andPlayer:player];
 #ifndef PLAY_ALL
             }
@@ -227,12 +228,10 @@ static void MyMIDIReadProc(const MIDIPacketList *pktlist,
 -(void) midiTest {
     // Create a new music sequence
     MusicSequence s;
-    // Initialise the music sequence
+    // Initialize the music sequence
     NewMusicSequence(&s);
     
-    // Get a string to the path of the MIDI file which
-    // should be located in the Resources folder
-    // I'm using a simple test midi file which is included in the download bundle at the end of this document
+    // Get a string to the path of the MIDI file
     NSString *midiFilePath = [[NSBundle mainBundle]
                               pathForResource:INPUT_SONG
                               ofType:INPUT_SONG_EXTENSION];
@@ -240,12 +239,11 @@ static void MyMIDIReadProc(const MIDIPacketList *pktlist,
     // Create a new URL which points to the MIDI file
     NSURL * midiFileURL = [NSURL fileURLWithPath:midiFilePath];
     
-    
     MusicSequenceFileLoad(s, (__bridge CFURLRef)(midiFileURL), 0, 0);
     
     // Create a new music player
-    MusicPlayer  p;
-    // Initialise the music player
+    MusicPlayer p;
+    // Initialize the music player
     NewMusicPlayer(&p);
     
     // Load the sequence into the music player
@@ -446,36 +444,38 @@ static void MyMIDIReadProc(const MIDIPacketList *pktlist,
     // Starts the music playing
     result = MusicPlayerStart(p);
     NSLog(@"MusicPlayerStart: %d", (int)result);
-    
-    // Get length of track so that we know how long to kill time for
-    MusicTrack t;
-    MusicTimeStamp len;
-    UInt32 sz = sizeof(MusicTimeStamp);
-    result = MusicSequenceGetIndTrack(s, 1, &t);
-    NSLog(@"MusicSequenceGetIndTrack: %d", (int)result);
-    
-    result = MusicTrackGetProperty(t, kSequenceTrackProperty_TrackLength, &len, &sz);
-    NSLog(@"MusicTrackGetProperty: %d", (int)result);
 
-    // If we have zero or less length, play for 10 minutes.
-    if (!(len > 0)) len = 600;
+    // Timer not consistently working on all midi files - esp. poorly formatted ones.
+//    // Get length of track so that we know how long to kill time for
+//    MusicTrack t;
+//    MusicTimeStamp len;
+//    UInt32 sz = sizeof(MusicTimeStamp);
+//    result = MusicSequenceGetIndTrack(s, 1, &t);
+//    NSLog(@"MusicSequenceGetIndTrack: %d", (int)result);
+//    
+//    result = MusicTrackGetProperty(t, kSequenceTrackProperty_TrackLength, &len, &sz);
+//    NSLog(@"MusicTrackGetProperty: %d", (int)result);
+//
+//    // If we have zero or less length, play for 10 minutes.
+//    if (!(len > 0)) len = 600;
+//    
+//    while (1) { // kill time until the music is over
+//        usleep (3 * 1000 * 1000);
+//        MusicTimeStamp now = 0;
+//        result = MusicPlayerGetTime (p, &now);
+//        NSLog(@"MusicPlayerGetTime: %d %f %f", (int)result, now, len);
+//        if (now >= len)
+//            break;
+//    }
+//    
+//    // Stop the player and dispose of the objects
+//    result = MusicPlayerStop(p);
+//    NSLog(@"MusicPlayerStop: %d", (int)result);
+//    result = DisposeMusicSequence(s);
+//    NSLog(@"DisposeMusicSequence: %d", (int)result);
+//    result = DisposeMusicPlayer(p);
+//    NSLog(@"DisposeMusicPlayer: %d", (int)result);
     
-    while (1) { // kill time until the music is over
-        usleep (3 * 1000 * 1000);
-        MusicTimeStamp now = 0;
-        result = MusicPlayerGetTime (p, &now);
-        NSLog(@"MusicPlayerGetTime: %d %f %f", (int)result, now, len);
-        if (now >= len)
-            break;
-    }
-    
-    // Stop the player and dispose of the objects
-    result = MusicPlayerStop(p);
-    NSLog(@"MusicPlayerStop: %d", (int)result);
-    result = DisposeMusicSequence(s);
-    NSLog(@"DisposeMusicSequence: %d", (int)result);
-    result = DisposeMusicPlayer(p);
-    NSLog(@"DisposeMusicPlayer: %d", (int)result);
 }
 
 
