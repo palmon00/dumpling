@@ -446,11 +446,8 @@ static void MyMIDIReadProc(const MIDIPacketList *pktlist,
     // Starts the music playing
     result = MusicPlayerStart(p);
     NSLog(@"MusicPlayerStart: %d", (int)result);
-
-    // Doesn't always work so cutting out for now until we can find a better solution
-    // Song will play through
     
-    // Get length of track so that= we know how long to kill time for
+    // Get length of track so that we know how long to kill time for
     MusicTrack t;
     MusicTimeStamp len;
     UInt32 sz = sizeof(MusicTimeStamp);
@@ -459,7 +456,9 @@ static void MyMIDIReadProc(const MIDIPacketList *pktlist,
     
     result = MusicTrackGetProperty(t, kSequenceTrackProperty_TrackLength, &len, &sz);
     NSLog(@"MusicTrackGetProperty: %d", (int)result);
-    if (!(len > 0)) len = 348;
+
+    // If we have zero or less length, play for 10 minutes.
+    if (!(len > 0)) len = 600;
     
     while (1) { // kill time until the music is over
         usleep (3 * 1000 * 1000);

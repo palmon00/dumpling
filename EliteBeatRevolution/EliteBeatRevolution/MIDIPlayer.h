@@ -13,18 +13,18 @@
 #import "EBRMySceneDelegate.h"
 #import "MIDIPlayerDelegate.h"
 
-#define MIDI_WRITE
-#define PLAY_ALL
+//#define MIDI_WRITE
+//#define PLAY_ALL
 
 //#define INPUT_SONG @"Bob Marley - no woman no cry"
-#define INPUT_SONG @"woman"
+#define INPUT_SONG @"rainbow"
 #define INPUT_SONG_EXTENSION @"mid"
 #define MUTE_CHANNEL 9
 
 #define USE_SOUND_FONT YES
 #define SOUND_FONT @"FF7"
 #define SOUND_FONT_EXTENSION @"sf2"
-#define SOUND_FONT_PATCH (int)0
+#define SOUND_FONT_PATCH (int)1
 
 #define MIDI_CHANNEL 2
 

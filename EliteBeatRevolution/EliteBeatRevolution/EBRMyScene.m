@@ -12,7 +12,7 @@
 
 @interface EBRMyScene () <EBRSpriteNodeDelegate>
 
-@property (strong, nonatomic) NSMutableArray *notesToAdd; // of EBRSpriteNode
+@property (strong, atomic) NSMutableArray *notesToAdd; // of EBRSpriteNode
 @property (atomic) int lastNote;
 
 @property (strong, nonatomic) SKTexture *up1;
@@ -60,15 +60,12 @@
 
 @implementation EBRMyScene
 
--(NSMutableArray *)notesToAdd
-{
-    if (!_notesToAdd) _notesToAdd = [[NSMutableArray alloc] init];
-    return _notesToAdd;
-}
-
 -(id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
         /* Setup your scene here */
+        
+        // Initialize notesToAdd
+        self.notesToAdd = [[NSMutableArray alloc] init];
         
         self.backgroundColor = [SKColor colorWithRed:0.15 green:0.15 blue:0.3 alpha:1.0];
         
