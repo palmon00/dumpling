@@ -16,9 +16,9 @@
 #define MIDI_WRITE
 //#define PLAY_ALL
 
-#define INPUT_SONG @"baby"
-#define MIDI_CHANNEL 3
-#define MUTE_CHANNEL 9
+//#define INPUT_SONG @"baby"
+//#define MIDI_CHANNEL 3
+//#define MUTE_CHANNEL 9
 
 //#define INPUT_SONG @"rainbow"
 //#define MIDI_CHANNEL 1
@@ -151,10 +151,10 @@
 //#define INPUT_SONG @"acrssunv"
 //#define MIDI_CHANNEL 5
 //#define MUTE_CHANNEL 9
-//
-//#define INPUT_SONG @"letidb"
-//#define MIDI_CHANNEL 6
-//#define MUTE_CHANNEL 9
+
+#define INPUT_SONG @"letitdb"
+#define MIDI_CHANNEL 6
+#define MUTE_CHANNEL 9
 
 //#define INPUT_SONG @"lawroad"
 //#define MIDI_CHANNEL 1

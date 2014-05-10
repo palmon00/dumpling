@@ -2,6 +2,24 @@
   "images" : [
     {
       "size" : "29x29",
+      "idiom" : "iphone",
+      "filename" : "EBR_Square_58-1.png",
+      "scale" : "2x"
+    },
+    {
+      "size" : "40x40",
+      "idiom" : "iphone",
+      "filename" : "EBR_Square_80-1.png",
+      "scale" : "2x"
+    },
+    {
+      "size" : "60x60",
+      "idiom" : "iphone",
+      "filename" : "EBR_Square_120.png",
+      "scale" : "2x"
+    },
+    {
+      "size" : "29x29",
       "idiom" : "ipad",
       "filename" : "EBR_Square_29.png",
       "scale" : "1x"

@@ -15,7 +15,7 @@
 		1E2DD1F81910B4A3000F196A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1E2DD1F61910B4A3000F196A /* InfoPlist.strings */; };
 		1E2DD1FA1910B4A3000F196A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E2DD1F91910B4A3000F196A /* main.m */; };
 		1E2DD1FE1910B4A4000F196A /* EBRAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E2DD1FD1910B4A4000F196A /* EBRAppDelegate.m */; };
-		1E2DD2011910B4A4000F196A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E2DD1FF1910B4A4000F196A /* Main.storyboard */; };
+		1E2DD2011910B4A4000F196A /* iPaad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E2DD1FF1910B4A4000F196A /* iPaad.storyboard */; };
 		1E2DD2041910B4A4000F196A /* EBRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E2DD2031910B4A4000F196A /* EBRViewController.m */; };
 		1E2DD2071910B4A4000F196A /* EBRMyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E2DD2061910B4A4000F196A /* EBRMyScene.m */; };
 		1E2DD2091910B4A4000F196A /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E2DD2081910B4A4000F196A /* Spaceship.png */; };
@@ -94,6 +94,7 @@
 		1E373D95191C748400476C24 /* thegoodb.mid in Resources */ = {isa = PBXBuildFile; fileRef = 1E373D8A191C748400476C24 /* thegoodb.mid */; };
 		1E373D96191C748400476C24 /* thegoodb.mid in Resources */ = {isa = PBXBuildFile; fileRef = 1E373D8A191C748400476C24 /* thegoodb.mid */; };
 		1E4AB6EF191A19AE006A2A0E /* MIDIPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E4AB6EE191A19AE006A2A0E /* MIDIPlayer.m */; };
+		1E6233D9191EA0F0001D436B /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E6233D8191EA0F0001D436B /* iPhone.storyboard */; };
 		1EB72628191CBDDE00D77F43 /* Billy_Joel_-_Piano_Man.mid in Resources */ = {isa = PBXBuildFile; fileRef = 1EB7261C191CBDDE00D77F43 /* Billy_Joel_-_Piano_Man.mid */; };
 		1EB72629191CBDDE00D77F43 /* Billy_Joel_-_River_of_Dreams.mid in Resources */ = {isa = PBXBuildFile; fileRef = 1EB7261D191CBDDE00D77F43 /* Billy_Joel_-_River_of_Dreams.mid */; };
 		1EB7262A191CBDDE00D77F43 /* Billy_Joel_-_She's_Got_a_Way.mid in Resources */ = {isa = PBXBuildFile; fileRef = 1EB7261E191CBDDE00D77F43 /* Billy_Joel_-_She's_Got_a_Way.mid */; };
@@ -173,7 +174,7 @@
 		1E2DD1FB1910B4A3000F196A /* EliteBeatRevolution-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EliteBeatRevolution-Prefix.pch"; sourceTree = "<group>"; };
 		1E2DD1FC1910B4A3000F196A /* EBRAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EBRAppDelegate.h; sourceTree = "<group>"; };
 		1E2DD1FD1910B4A4000F196A /* EBRAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EBRAppDelegate.m; sourceTree = "<group>"; };
-		1E2DD2001910B4A4000F196A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1E2DD2001910B4A4000F196A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/iPaad.storyboard; sourceTree = "<group>"; };
 		1E2DD2021910B4A4000F196A /* EBRViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EBRViewController.h; sourceTree = "<group>"; };
 		1E2DD2031910B4A4000F196A /* EBRViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EBRViewController.m; sourceTree = "<group>"; };
 		1E2DD2051910B4A4000F196A /* EBRMyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EBRMyScene.h; sourceTree = "<group>"; };
@@ -249,6 +250,7 @@
 		1E373D8A191C748400476C24 /* thegoodb.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = thegoodb.mid; sourceTree = "<group>"; };
 		1E4AB6ED191A19AE006A2A0E /* MIDIPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIDIPlayer.h; sourceTree = "<group>"; };
 		1E4AB6EE191A19AE006A2A0E /* MIDIPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIDIPlayer.m; sourceTree = "<group>"; };
+		1E6233D8191EA0F0001D436B /* iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = iPhone.storyboard; path = ../iPhone.storyboard; sourceTree = "<group>"; };
 		1EB7261C191CBDDE00D77F43 /* Billy_Joel_-_Piano_Man.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = "Billy_Joel_-_Piano_Man.mid"; sourceTree = "<group>"; };
 		1EB7261D191CBDDE00D77F43 /* Billy_Joel_-_River_of_Dreams.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = "Billy_Joel_-_River_of_Dreams.mid"; sourceTree = "<group>"; };
 		1EB7261E191CBDDE00D77F43 /* Billy_Joel_-_She's_Got_a_Way.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = "Billy_Joel_-_She's_Got_a_Way.mid"; sourceTree = "<group>"; };
@@ -345,7 +347,8 @@
 			children = (
 				1E2DD1FC1910B4A3000F196A /* EBRAppDelegate.h */,
 				1E2DD1FD1910B4A4000F196A /* EBRAppDelegate.m */,
-				1E2DD1FF1910B4A4000F196A /* Main.storyboard */,
+				1E6233D8191EA0F0001D436B /* iPhone.storyboard */,
+				1E2DD1FF1910B4A4000F196A /* iPaad.storyboard */,
 				1E2DD2021910B4A4000F196A /* EBRViewController.h */,
 				1E2DD2031910B4A4000F196A /* EBRViewController.m */,
 				1EE390EC191C1A0A009C1F93 /* EBRMySceneDelegate.h */,
@@ -692,6 +695,7 @@
 				1EB7262D191CBDDE00D77F43 /* Billy_Joel_-_Uptown_Girl.mid in Resources */,
 				1E31A024191B596D00CCA757 /* walk_left_9.png in Resources */,
 				1E319FFC191B50EF00CCA757 /* walk_right_7.png in Resources */,
+				1E6233D9191EA0F0001D436B /* iPhone.storyboard in Resources */,
 				1EB72635191CBEC000D77F43 /* Elton John - Rocket Man 1.mid in Resources */,
 				1EB7265F191CCE1100D77F43 /* hellogby.mid in Resources */,
 				1E2DD23D1910B5C2000F196A /* Down Receptor (Small).png in Resources */,
@@ -704,7 +708,7 @@
 				1E31A009191B595D00CCA757 /* walk_down_1.png in Resources */,
 				1E31A022191B596D00CCA757 /* walk_left_7.png in Resources */,
 				1E31A02F191B597300CCA757 /* walk_up_1.png in Resources */,
-				1E2DD2011910B4A4000F196A /* Main.storyboard in Resources */,
+				1E2DD2011910B4A4000F196A /* iPaad.storyboard in Resources */,
 				1E2DD24D1910B5C2000F196A /* Up Receptor.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -788,12 +792,12 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		1E2DD1FF1910B4A4000F196A /* Main.storyboard */ = {
+		1E2DD1FF1910B4A4000F196A /* iPaad.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				1E2DD2001910B4A4000F196A /* Base */,
 			);
-			name = Main.storyboard;
+			name = iPaad.storyboard;
 			sourceTree = "<group>";
 		};
 		1E2DD21A1910B4A4000F196A /* InfoPlist.strings */ = {
@@ -889,7 +893,7 @@
 				INFOPLIST_FILE = "EliteBeatRevolution/EliteBeatRevolution-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
-				TARGETED_DEVICE_FAMILY = 2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -904,7 +908,7 @@
 				INFOPLIST_FILE = "EliteBeatRevolution/EliteBeatRevolution-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
-				TARGETED_DEVICE_FAMILY = 2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
