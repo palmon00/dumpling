@@ -5,36 +5,36 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>AC2B9F54-D6D8-47FF-BCF6-B3EFB319EA5A</string>
+	<string>EC6E2010-7956-41E5-9B71-309607293C5F</string>
 	<key>IDESourceControlProjectName</key>
-	<string>EliteBeatRevolution</string>
+	<string>TextToSpeech</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>4C615339-549D-446D-AD3D-E95B3F5882F0</key>
-		<string>https://github.com/palmon00/dumpling.git</string>
+		<key>EADA6E42-87BC-4507-BFF7-6AE61887161A</key>
+		<string>https://github.com/palmon00/dumpling</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>EliteBeatRevolution.xcodeproj/project.xcworkspace</string>
+	<string>TextToSpeech/TextToSpeech.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>4C615339-549D-446D-AD3D-E95B3F5882F0</key>
-		<string>../..</string>
+		<key>EADA6E42-87BC-4507-BFF7-6AE61887161A</key>
+		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/palmon00/dumpling.git</string>
+	<string>https://github.com/palmon00/dumpling</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>4C615339-549D-446D-AD3D-E95B3F5882F0</string>
+	<string>EADA6E42-87BC-4507-BFF7-6AE61887161A</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>4C615339-549D-446D-AD3D-E95B3F5882F0</string>
+			<string>EADA6E42-87BC-4507-BFF7-6AE61887161A</string>
 			<key>IDESourceControlWCCName</key>
-			<string>EliteBeatRevolution</string>
+			<string>dumpling</string>
 		</dict>
 	</array>
 </dict>

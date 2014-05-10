@@ -83,7 +83,7 @@
     [self.localeSegmentedControl removeFromSuperview];
     [self.view addSubview:self.mySegmentedControl];
     
-    // Add motion effects
+    // Create motion effects
     UIInterpolatingMotionEffect *horizontalMotionEffect = [[UIInterpolatingMotionEffect alloc] initWithKeyPath:@"center.x" type:UIInterpolatingMotionEffectTypeTiltAlongHorizontalAxis];
     horizontalMotionEffect.minimumRelativeValue = @(MOTION_EFFECT_MIN);
     horizontalMotionEffect.maximumRelativeValue = @(MOTION_EFFECT_MAX);
@@ -92,24 +92,12 @@
     verticalMotionEffect.minimumRelativeValue = @(MOTION_EFFECT_MIN);
     verticalMotionEffect.maximumRelativeValue = @(MOTION_EFFECT_MAX);
     
-    [self.instructionLabel addMotionEffect:horizontalMotionEffect];
-    [self.instructionLabel addMotionEffect:verticalMotionEffect];
-    [self.speechTextView addMotionEffect:horizontalMotionEffect];
-    [self.speechTextView addMotionEffect:verticalMotionEffect];
-    [self.speakButton addMotionEffect:horizontalMotionEffect];
-    [self.speakButton addMotionEffect:verticalMotionEffect];
-    [self.churchillButton addMotionEffect:horizontalMotionEffect];
-    [self.churchillButton addMotionEffect:verticalMotionEffect];
-    [self.paikeaButton addMotionEffect:horizontalMotionEffect];
-    [self.paikeaButton addMotionEffect:verticalMotionEffect];
-    [self.lincolnButton addMotionEffect:horizontalMotionEffect];
-    [self.lincolnButton addMotionEffect:verticalMotionEffect];
-    [self.savannahButton addMotionEffect:horizontalMotionEffect];
-    [self.savannahButton addMotionEffect:verticalMotionEffect];
-    [self.bilboButton addMotionEffect:horizontalMotionEffect];
-    [self.bilboButton addMotionEffect:verticalMotionEffect];
-    [self.mySegmentedControl addMotionEffect:horizontalMotionEffect];
-    [self.mySegmentedControl addMotionEffect:verticalMotionEffect];
+    // Apply motion effects
+    for (UIView *view in [self.view subviews]) {
+        if ([view isKindOfClass:[UIImageView class]]) continue; // Don't add to imageView
+        [view addMotionEffect:horizontalMotionEffect];
+        [view addMotionEffect:verticalMotionEffect];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -117,6 +105,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 - (IBAction)speakButton:(UIButton *)sender {
     // Drop the keyboard
     [self.speechTextView resignFirstResponder];
