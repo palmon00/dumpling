@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="kjR-Op-tGr">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="Uao-cU-XRi">
+            <objects>
+                <viewController id="kjR-Op-tGr" customClass="TTSViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Xzs-de-1UM"/>
+                        <viewControllerLayoutGuide type="bottom" id="4tw-Mc-944"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lOP-lo-tUd">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.25" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch_1024x768.png" translatesAutoresizingMaskIntoConstraints="NO" id="bm3-oc-CG8">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3w5-fF-rCz">
+                                <rect key="frame" x="20" y="56" width="728" height="432"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Text for Speech" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uCC-Vy-JCZ">
+                                <rect key="frame" x="20" y="28" width="728" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zib-eG-pp2">
+                                <rect key="frame" x="20" y="496" width="728" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <state key="normal" title="Speak!">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="speakButton:" destination="kjR-Op-tGr" eventType="touchUpInside" id="PY4-6X-ZQJ"/>
+                                </connections>
+                            </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="73f-fH-gvA">
+                                <rect key="frame" x="20" y="570" width="728" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                </segments>
+                                <color key="tintColor" red="0.0" green="0.50196081400000003" blue="1" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xI0-tH-XcH">
+                                <rect key="frame" x="314" y="536" width="140" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                <state key="normal" title="Lincoln">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="lincolnSpeechButtonPressed:" destination="kjR-Op-tGr" eventType="touchUpInside" id="cMT-Kb-Glc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Sz-yU-Qan">
+                                <rect key="frame" x="462" y="536" width="139" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                <state key="normal" title="S. Nix">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="lincolnSpeechButtonPressed:" destination="kjR-Op-tGr" eventType="touchUpInside" id="rMZ-eV-VyB"/>
+                                    <action selector="madMaxSpeechButtonPressed:" destination="kjR-Op-tGr" eventType="touchUpInside" id="Ojp-oR-osX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CvM-4Y-8Lj">
+                                <rect key="frame" x="167" y="536" width="139" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                <state key="normal" title="Paikea">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="lincolnSpeechButtonPressed:" destination="kjR-Op-tGr" eventType="touchUpInside" id="DJw-yM-BCX"/>
+                                    <action selector="paikeaSpeechButtonPressed:" destination="kjR-Op-tGr" eventType="touchUpInside" id="dHe-0t-Lxj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DWF-AZ-xpk">
+                                <rect key="frame" x="609" y="536" width="139" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                <state key="normal" title="Bilbo">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="bilboSpeechButtonPressed:" destination="kjR-Op-tGr" eventType="touchUpInside" id="MMf-hp-doI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8xH-hn-FXg">
+                                <rect key="frame" x="20" y="536" width="139" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                <state key="normal" title="Churchill">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="churchillSpeechButtonPressed:" destination="kjR-Op-tGr" eventType="touchUpInside" id="BD9-gF-067"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="CvM-4Y-8Lj" firstAttribute="leading" secondItem="8xH-hn-FXg" secondAttribute="trailing" constant="8" symbolic="YES" id="0o2-HZ-KbC"/>
+                            <constraint firstItem="8xH-hn-FXg" firstAttribute="top" secondItem="zib-eG-pp2" secondAttribute="bottom" constant="8" symbolic="YES" id="5hq-e1-wYU"/>
+                            <constraint firstItem="9Sz-yU-Qan" firstAttribute="top" secondItem="zib-eG-pp2" secondAttribute="bottom" constant="8" symbolic="YES" id="8Cu-gB-axX"/>
+                            <constraint firstAttribute="centerX" secondItem="xI0-tH-XcH" secondAttribute="centerX" id="8QI-KF-f6g"/>
+                            <constraint firstItem="73f-fH-gvA" firstAttribute="leading" secondItem="lOP-lo-tUd" secondAttribute="leading" constant="20" symbolic="YES" id="8WC-lE-7gJ"/>
+                            <constraint firstItem="DWF-AZ-xpk" firstAttribute="top" secondItem="zib-eG-pp2" secondAttribute="bottom" constant="8" symbolic="YES" id="8fS-62-L3A"/>
+                            <constraint firstItem="8xH-hn-FXg" firstAttribute="width" secondItem="xI0-tH-XcH" secondAttribute="width" id="9Ta-zW-JwV"/>
+                            <constraint firstItem="3w5-fF-rCz" firstAttribute="leading" secondItem="lOP-lo-tUd" secondAttribute="leading" constant="20" symbolic="YES" id="CN4-fg-dpJ"/>
+                            <constraint firstAttribute="trailing" secondItem="uCC-Vy-JCZ" secondAttribute="trailing" constant="20" symbolic="YES" id="I3c-Br-YSX"/>
+                            <constraint firstAttribute="trailing" secondItem="DWF-AZ-xpk" secondAttribute="trailing" constant="20" symbolic="YES" id="KFv-5S-V8Z"/>
+                            <constraint firstItem="3w5-fF-rCz" firstAttribute="top" secondItem="uCC-Vy-JCZ" secondAttribute="bottom" constant="8" symbolic="YES" id="Ktq-pU-Qkq"/>
+                            <constraint firstItem="CvM-4Y-8Lj" firstAttribute="top" secondItem="zib-eG-pp2" secondAttribute="bottom" constant="8" symbolic="YES" id="MNq-5R-yvb"/>
+                            <constraint firstItem="8xH-hn-FXg" firstAttribute="width" secondItem="CvM-4Y-8Lj" secondAttribute="width" id="N1r-yX-z8n"/>
+                            <constraint firstAttribute="centerY" secondItem="zib-eG-pp2" secondAttribute="centerY" id="PMd-HB-k37"/>
+                            <constraint firstItem="uCC-Vy-JCZ" firstAttribute="leading" secondItem="lOP-lo-tUd" secondAttribute="leading" constant="20" symbolic="YES" id="RlC-0o-v8Q"/>
+                            <constraint firstItem="uCC-Vy-JCZ" firstAttribute="top" secondItem="Xzs-de-1UM" secondAttribute="bottom" constant="20" symbolic="YES" id="Ss9-SQ-Y8C"/>
+                            <constraint firstAttribute="trailing" secondItem="zib-eG-pp2" secondAttribute="trailing" constant="20" symbolic="YES" id="VkD-V8-j0p"/>
+                            <constraint firstItem="4tw-Mc-944" firstAttribute="top" secondItem="bm3-oc-CG8" secondAttribute="bottom" id="Vq0-HG-69g"/>
+                            <constraint firstItem="xI0-tH-XcH" firstAttribute="top" secondItem="zib-eG-pp2" secondAttribute="bottom" constant="8" symbolic="YES" id="X0G-Le-EGJ"/>
+                            <constraint firstItem="8xH-hn-FXg" firstAttribute="width" secondItem="9Sz-yU-Qan" secondAttribute="width" id="ZCv-aZ-Rjm"/>
+                            <constraint firstItem="zib-eG-pp2" firstAttribute="top" secondItem="3w5-fF-rCz" secondAttribute="bottom" constant="8" symbolic="YES" id="Zp7-h5-XSL"/>
+                            <constraint firstItem="xI0-tH-XcH" firstAttribute="leading" secondItem="CvM-4Y-8Lj" secondAttribute="trailing" constant="8" symbolic="YES" id="cJB-fG-GeZ"/>
+                            <constraint firstAttribute="trailing" secondItem="3w5-fF-rCz" secondAttribute="trailing" constant="20" symbolic="YES" id="cKG-oi-B9l"/>
+                            <constraint firstAttribute="trailing" secondItem="73f-fH-gvA" secondAttribute="trailing" constant="20" symbolic="YES" id="clo-Bv-5ui"/>
+                            <constraint firstItem="DWF-AZ-xpk" firstAttribute="leading" secondItem="9Sz-yU-Qan" secondAttribute="trailing" constant="8" symbolic="YES" id="euA-CI-mom"/>
+                            <constraint firstItem="bm3-oc-CG8" firstAttribute="leading" secondItem="lOP-lo-tUd" secondAttribute="leading" id="k8w-sV-UFD"/>
+                            <constraint firstItem="zib-eG-pp2" firstAttribute="leading" secondItem="lOP-lo-tUd" secondAttribute="leading" constant="20" symbolic="YES" id="mo4-ED-7rd"/>
+                            <constraint firstAttribute="trailing" secondItem="bm3-oc-CG8" secondAttribute="trailing" id="oAh-pG-ZG9"/>
+                            <constraint firstItem="bm3-oc-CG8" firstAttribute="top" secondItem="lOP-lo-tUd" secondAttribute="top" id="oMK-P0-mzV"/>
+                            <constraint firstItem="8xH-hn-FXg" firstAttribute="width" secondItem="DWF-AZ-xpk" secondAttribute="width" id="rxF-bV-ehQ"/>
+                            <constraint firstItem="9Sz-yU-Qan" firstAttribute="leading" secondItem="xI0-tH-XcH" secondAttribute="trailing" constant="8" symbolic="YES" id="uAo-fT-PXS"/>
+                            <constraint firstItem="73f-fH-gvA" firstAttribute="top" secondItem="xI0-tH-XcH" secondAttribute="bottom" constant="8" symbolic="YES" id="wBY-zZ-xDa"/>
+                            <constraint firstItem="8xH-hn-FXg" firstAttribute="leading" secondItem="lOP-lo-tUd" secondAttribute="leading" constant="20" symbolic="YES" id="yku-2P-Wn2"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <connections>
+                        <outlet property="bilboButton" destination="DWF-AZ-xpk" id="MVv-LP-e24"/>
+                        <outlet property="churchillButton" destination="8xH-hn-FXg" id="JmU-Sk-Uyl"/>
+                        <outlet property="instructionLabel" destination="uCC-Vy-JCZ" id="vvI-yc-K0g"/>
+                        <outlet property="lincolnButton" destination="xI0-tH-XcH" id="uAu-74-qGV"/>
+                        <outlet property="localeSegmentedControl" destination="73f-fH-gvA" id="wav-Vh-Xcz"/>
+                        <outlet property="paikeaButton" destination="CvM-4Y-8Lj" id="rTx-3h-Yga"/>
+                        <outlet property="savannahButton" destination="9Sz-yU-Qan" id="Etv-uS-WvR"/>
+                        <outlet property="speakButton" destination="zib-eG-pp2" id="5mx-8T-wfG"/>
+                        <outlet property="speechTextView" destination="3w5-fF-rCz" id="bai-5S-qn2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="45J-9w-XQZ" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="launch_1024x768.png" width="768" height="1024"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+</document>
