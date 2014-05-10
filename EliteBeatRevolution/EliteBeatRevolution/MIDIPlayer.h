@@ -16,9 +16,9 @@
 #define MIDI_WRITE
 //#define PLAY_ALL
 
-//#define INPUT_SONG @"baby"
-//#define MIDI_CHANNEL 3
-//#define MUTE_CHANNEL 9
+#define INPUT_SONG @"baby"
+#define MIDI_CHANNEL 3
+#define MUTE_CHANNEL 9
 
 //#define INPUT_SONG @"rainbow"
 //#define MIDI_CHANNEL 1
@@ -156,16 +156,16 @@
 //#define MIDI_CHANNEL 6
 //#define MUTE_CHANNEL 9
 
-#define INPUT_SONG @"lawroad"
-#define MIDI_CHANNEL 1
-#define MUTE_CHANNEL 9
+//#define INPUT_SONG @"lawroad"
+//#define MIDI_CHANNEL 1
+//#define MUTE_CHANNEL 9
 
 #define INPUT_SONG_EXTENSION @"mid"
 
 #define USE_SOUND_FONT YES
 #define SOUND_FONT @"FF7"
 #define SOUND_FONT_EXTENSION @"sf2"
-#define SOUND_FONT_PATCH (int)0
+#define SOUND_FONT_PATCH (int)3
 
 @interface MIDIPlayer : NSObject <EBRMySceneDelegate>
 

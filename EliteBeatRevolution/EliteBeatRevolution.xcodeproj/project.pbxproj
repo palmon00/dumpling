@@ -93,8 +93,6 @@
 		1E373D7F191C6C3E00476C24 /* madworld.mid in Resources */ = {isa = PBXBuildFile; fileRef = 1E373D7D191C6C3E00476C24 /* madworld.mid */; };
 		1E373D95191C748400476C24 /* thegoodb.mid in Resources */ = {isa = PBXBuildFile; fileRef = 1E373D8A191C748400476C24 /* thegoodb.mid */; };
 		1E373D96191C748400476C24 /* thegoodb.mid in Resources */ = {isa = PBXBuildFile; fileRef = 1E373D8A191C748400476C24 /* thegoodb.mid */; };
-		1E3C6F5C191C817A00EFF406 /* varys_complete_bank.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = 1E3C6F5B191C817A00EFF406 /* varys_complete_bank.sf2 */; };
-		1E3C6F5D191C817A00EFF406 /* varys_complete_bank.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = 1E3C6F5B191C817A00EFF406 /* varys_complete_bank.sf2 */; };
 		1E4AB6EF191A19AE006A2A0E /* MIDIPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E4AB6EE191A19AE006A2A0E /* MIDIPlayer.m */; };
 		1EB72628191CBDDE00D77F43 /* Billy_Joel_-_Piano_Man.mid in Resources */ = {isa = PBXBuildFile; fileRef = 1EB7261C191CBDDE00D77F43 /* Billy_Joel_-_Piano_Man.mid */; };
 		1EB72629191CBDDE00D77F43 /* Billy_Joel_-_River_of_Dreams.mid in Resources */ = {isa = PBXBuildFile; fileRef = 1EB7261D191CBDDE00D77F43 /* Billy_Joel_-_River_of_Dreams.mid */; };
@@ -249,7 +247,6 @@
 		1E373D7A191C6C2E00476C24 /* woman.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = woman.mid; sourceTree = "<group>"; };
 		1E373D7D191C6C3E00476C24 /* madworld.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = madworld.mid; sourceTree = "<group>"; };
 		1E373D8A191C748400476C24 /* thegoodb.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = thegoodb.mid; sourceTree = "<group>"; };
-		1E3C6F5B191C817A00EFF406 /* varys_complete_bank.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = varys_complete_bank.sf2; sourceTree = "<group>"; };
 		1E4AB6ED191A19AE006A2A0E /* MIDIPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIDIPlayer.h; sourceTree = "<group>"; };
 		1E4AB6EE191A19AE006A2A0E /* MIDIPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIDIPlayer.m; sourceTree = "<group>"; };
 		1EB7261C191CBDDE00D77F43 /* Billy_Joel_-_Piano_Man.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = "Billy_Joel_-_Piano_Man.mid"; sourceTree = "<group>"; };
@@ -369,7 +366,6 @@
 			isa = PBXGroup;
 			children = (
 				1E373D71191C6C0C00476C24 /* FF7.sf2 */,
-				1E3C6F5B191C817A00EFF406 /* varys_complete_bank.sf2 */,
 				1E373D74191C6C1700476C24 /* baby.mid */,
 				1E373D77191C6C1F00476C24 /* rainbow.mid */,
 				1E373D7A191C6C2E00476C24 /* woman.mid */,
@@ -625,7 +621,6 @@
 				1EB7266E191CCECB00D77F43 /* acrssunv.mid in Resources */,
 				1E2DD23E1910B5C2000F196A /* Down Receptor.png in Resources */,
 				1E31A033191B597300CCA757 /* walk_up_5.png in Resources */,
-				1E3C6F5C191C817A00EFF406 /* varys_complete_bank.sf2 in Resources */,
 				1EB7263B191CC7BC00D77F43 /* ordinary.mid in Resources */,
 				1E2DD1F81910B4A3000F196A /* InfoPlist.strings in Resources */,
 				1E31A011191B595D00CCA757 /* walk_down_9.png in Resources */,
@@ -728,7 +723,6 @@
 				1EB7265D191CCDE900D77F43 /* strawbf.mid in Resources */,
 				1EB7265A191CCD8D00D77F43 /* alluneed.mid in Resources */,
 				1EB72654191CCD2000D77F43 /* whenim64.mid in Resources */,
-				1E3C6F5D191C817A00EFF406 /* varys_complete_bank.sf2 in Resources */,
 				1EB72669191CCE8600D77F43 /* blckbird.mid in Resources */,
 				1EB72639191CC6B600D77F43 /* landdown.mid in Resources */,
 				1EB72675191CCF1D00D77F43 /* lawroad.mid in Resources */,
