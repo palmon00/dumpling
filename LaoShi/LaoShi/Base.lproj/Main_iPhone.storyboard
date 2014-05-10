@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="rnx-IC-Z1j">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="3iF-Wb-vGZ">
+            <objects>
+                <viewController id="rnx-IC-Z1j" customClass="LSViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1Bk-EX-dF4"/>
+                        <viewControllerLayoutGuide type="bottom" id="MSs-C8-c62"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eGc-1y-Qza">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.25" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch_1136x640.png" translatesAutoresizingMaskIntoConstraints="NO" id="8nK-sb-MYG">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eyf-qH-yFS">
+                                <rect key="frame" x="20" y="56" width="280" height="204"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Text for Speech" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eQ2-e8-6H4">
+                                <rect key="frame" x="20" y="28" width="280" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eps-Hi-Gv5">
+                                <rect key="frame" x="20" y="268" width="280" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <state key="normal" title="Speak!">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="speakButtonPressed:" destination="rnx-IC-Z1j" eventType="touchUpInside" id="9oy-0K-krd"/>
+                                </connections>
+                            </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Sgj-Qr-7di">
+                                <rect key="frame" x="20" y="342" width="280" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                </segments>
+                                <color key="tintColor" red="0.0" green="0.50196081400000003" blue="1" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tb9-Xh-g6H">
+                                <rect key="frame" x="20" y="308" width="64" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="0.0" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                <state key="normal" title=" New ">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="phraseButtonPressed:" destination="rnx-IC-Z1j" eventType="touchUpInside" id="gpD-Oa-nnk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i5D-m4-8cN">
+                                <rect key="frame" x="92" y="308" width="64" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                <state key="normal" title=" Foreign ">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="foreignButtonPressed:" destination="rnx-IC-Z1j" eventType="touchUpInside" id="EoQ-Wj-0e4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EgJ-8z-Omj">
+                                <rect key="frame" x="164" y="308" width="64" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                <state key="normal" title=" Phonetic ">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="phoneticButtonPressed:" destination="rnx-IC-Z1j" eventType="touchUpInside" id="iaA-Qb-cbc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C5N-Rs-UYa">
+                                <rect key="frame" x="236" y="308" width="64" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                <state key="normal" title=" Home ">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="nativeButtonPressed:" destination="rnx-IC-Z1j" eventType="touchUpInside" id="mZu-w8-8xl"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="EgJ-8z-Omj" firstAttribute="width" secondItem="C5N-Rs-UYa" secondAttribute="width" id="1Ga-KF-IGh"/>
+                            <constraint firstItem="8nK-sb-MYG" firstAttribute="leading" secondItem="eGc-1y-Qza" secondAttribute="leading" id="4Y1-Tf-pVt"/>
+                            <constraint firstItem="i5D-m4-8cN" firstAttribute="leading" secondItem="tb9-Xh-g6H" secondAttribute="trailing" constant="8" symbolic="YES" id="6t4-CS-0hU"/>
+                            <constraint firstItem="EgJ-8z-Omj" firstAttribute="width" secondItem="i5D-m4-8cN" secondAttribute="width" id="7Sh-Lm-F8D"/>
+                            <constraint firstAttribute="trailing" secondItem="eQ2-e8-6H4" secondAttribute="trailing" constant="20" symbolic="YES" id="9d9-RC-hyV"/>
+                            <constraint firstItem="MSs-C8-c62" firstAttribute="top" secondItem="8nK-sb-MYG" secondAttribute="bottom" id="A7p-RB-Xp1"/>
+                            <constraint firstAttribute="trailing" secondItem="C5N-Rs-UYa" secondAttribute="trailing" constant="20" symbolic="YES" id="GmH-vb-lko"/>
+                            <constraint firstItem="8nK-sb-MYG" firstAttribute="top" secondItem="1Bk-EX-dF4" secondAttribute="bottom" constant="-20" id="HF8-tD-WIp"/>
+                            <constraint firstAttribute="trailing" secondItem="Eps-Hi-Gv5" secondAttribute="trailing" constant="20" symbolic="YES" id="MA9-fk-lPQ"/>
+                            <constraint firstItem="EgJ-8z-Omj" firstAttribute="top" secondItem="Eps-Hi-Gv5" secondAttribute="bottom" constant="8" symbolic="YES" id="MYJ-b1-wnM"/>
+                            <constraint firstItem="C5N-Rs-UYa" firstAttribute="top" secondItem="Eps-Hi-Gv5" secondAttribute="bottom" constant="8" symbolic="YES" id="Npk-we-5tH"/>
+                            <constraint firstItem="eQ2-e8-6H4" firstAttribute="leading" secondItem="eGc-1y-Qza" secondAttribute="leading" constant="20" symbolic="YES" id="Ob5-2K-vCn"/>
+                            <constraint firstItem="EgJ-8z-Omj" firstAttribute="leading" secondItem="i5D-m4-8cN" secondAttribute="trailing" constant="8" symbolic="YES" id="PdA-uO-dNS"/>
+                            <constraint firstItem="Eps-Hi-Gv5" firstAttribute="leading" secondItem="eGc-1y-Qza" secondAttribute="leading" constant="20" symbolic="YES" id="Rib-4Z-aIe"/>
+                            <constraint firstAttribute="centerY" secondItem="Eps-Hi-Gv5" secondAttribute="centerY" id="WaY-Yu-jMn"/>
+                            <constraint firstItem="i5D-m4-8cN" firstAttribute="top" secondItem="Eps-Hi-Gv5" secondAttribute="bottom" constant="8" symbolic="YES" id="Zq4-pz-dn0"/>
+                            <constraint firstItem="Eyf-qH-yFS" firstAttribute="top" secondItem="eQ2-e8-6H4" secondAttribute="bottom" constant="8" symbolic="YES" id="aU0-Dw-cer"/>
+                            <constraint firstItem="Sgj-Qr-7di" firstAttribute="leading" secondItem="eGc-1y-Qza" secondAttribute="leading" constant="20" symbolic="YES" id="aa9-rZ-0P1"/>
+                            <constraint firstItem="EgJ-8z-Omj" firstAttribute="width" secondItem="tb9-Xh-g6H" secondAttribute="width" id="bfI-Zy-D3n"/>
+                            <constraint firstItem="Sgj-Qr-7di" firstAttribute="top" secondItem="C5N-Rs-UYa" secondAttribute="bottom" constant="8" symbolic="YES" id="bsy-VI-VH8"/>
+                            <constraint firstItem="Eyf-qH-yFS" firstAttribute="leading" secondItem="eGc-1y-Qza" secondAttribute="leading" constant="20" symbolic="YES" id="djZ-Ld-RwZ"/>
+                            <constraint firstItem="C5N-Rs-UYa" firstAttribute="leading" secondItem="EgJ-8z-Omj" secondAttribute="trailing" constant="8" symbolic="YES" id="eoj-kR-pFW"/>
+                            <constraint firstItem="Eps-Hi-Gv5" firstAttribute="top" secondItem="Eyf-qH-yFS" secondAttribute="bottom" constant="8" symbolic="YES" id="fjw-6U-GvC"/>
+                            <constraint firstItem="eQ2-e8-6H4" firstAttribute="top" secondItem="1Bk-EX-dF4" secondAttribute="bottom" constant="20" symbolic="YES" id="nE8-nG-86K"/>
+                            <constraint firstAttribute="trailing" secondItem="Sgj-Qr-7di" secondAttribute="trailing" constant="20" symbolic="YES" id="rRw-OP-bdJ"/>
+                            <constraint firstItem="tb9-Xh-g6H" firstAttribute="top" secondItem="Eps-Hi-Gv5" secondAttribute="bottom" constant="8" symbolic="YES" id="wk2-LG-eFW"/>
+                            <constraint firstItem="tb9-Xh-g6H" firstAttribute="leading" secondItem="eGc-1y-Qza" secondAttribute="leading" constant="20" symbolic="YES" id="xIU-an-wCx"/>
+                            <constraint firstAttribute="trailing" secondItem="Eyf-qH-yFS" secondAttribute="trailing" constant="20" symbolic="YES" id="zMo-G2-gKC"/>
+                            <constraint firstAttribute="trailing" secondItem="8nK-sb-MYG" secondAttribute="trailing" id="zUL-T0-nDB"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <connections>
+                        <outlet property="foreignButton" destination="i5D-m4-8cN" id="EST-b8-njb"/>
+                        <outlet property="instructionLabel" destination="eQ2-e8-6H4" id="Hju-CH-v23"/>
+                        <outlet property="localeSegmentedControl" destination="Sgj-Qr-7di" id="WPl-TU-8p1"/>
+                        <outlet property="nativeButton" destination="C5N-Rs-UYa" id="dLm-Jh-IDA"/>
+                        <outlet property="phoneticButton" destination="EgJ-8z-Omj" id="ieZ-gW-FQv"/>
+                        <outlet property="phraseButton" destination="tb9-Xh-g6H" id="YIQ-6r-Ww0"/>
+                        <outlet property="speakButton" destination="Eps-Hi-Gv5" id="Jle-2w-ih9"/>
+                        <outlet property="speechTextView" destination="Eyf-qH-yFS" id="EOc-dQ-tEm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="L05-tb-Fw3" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="launch_1136x640.png" width="768" height="1024"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
