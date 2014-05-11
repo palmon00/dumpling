@@ -17,6 +17,8 @@
 
 @implementation LSSayings
 
+#pragma mark - Instantiation
+
 -(NSMutableArray *)sayings
 {
     if (!_sayings) _sayings = [[NSMutableArray alloc] init];
@@ -33,6 +35,8 @@
     });
     return sharedSayings;
 }
+
+#pragma mark - Init
 
 -(instancetype)init
 {
@@ -74,6 +78,8 @@
     }
     return self;
 }
+
+#pragma mark - Data retrieval methods
 
 -(NSArray *)allSayings
 {

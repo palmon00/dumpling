@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>3955D912-73C0-4C58-A14D-70D1B4352A7C</string>
+	<key>IDESourceControlProjectName</key>
+	<string>LaoShi</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>D093F9C3-9007-409B-B2F3-1984AF940F9B</key>
+		<string>https://github.com/palmon00/dumpling</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>LaoShi/LaoShi.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>D093F9C3-9007-409B-B2F3-1984AF940F9B</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/palmon00/dumpling</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>D093F9C3-9007-409B-B2F3-1984AF940F9B</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>D093F9C3-9007-409B-B2F3-1984AF940F9B</string>
+			<key>IDESourceControlWCCName</key>
+			<string>dumpling</string>
+		</dict>
+	</array>
+</dict>
+</plist>

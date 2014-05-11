@@ -11,8 +11,20 @@
 #import "LSSayings.h"
 #import "LSSaying.h"
 
-#define MOTION_EFFECT_MIN -10
-#define MOTION_EFFECT_MAX +10
+NSString * const kForeignLanguage = @"zh";
+
+float const kForeignSpeechVolume = 1.0; // 0.0 to 1.0
+float const kForeignSpeechPitchMult = 1.0; // 0.5 to 2.0
+
+float const kNativeSpeechVolume = 1.0; // 0.0 to 1.0
+float const kNativeSpeechPitchMult = 1.0; // 0.5 to 2.0
+
+#define FOREIGN_SPEECH_RATE AVSpeechUtteranceMinimumSpeechRate // AVSpeechUtteranceMaximumSpeechRate, AVSpeechUtteranceMinimumSpeechRate, AVSpeechUtteranceDefaultSpeechRate
+
+#define NATIVE_SPEECH_RATE (AVSpeechUtteranceDefaultSpeechRate-AVSpeechUtteranceMinimumSpeechRate)/3 // AVSpeechUtteranceMaximumSpeechRate, AVSpeechUtteranceMinimumSpeechRate, AVSpeechUtteranceDefaultSpeechRate
+
+int const kMotionEffectMin = -10;
+int const kMotionEffectMax = +10;
 
 @interface LSViewController () <AVSpeechSynthesizerDelegate, UITextViewDelegate>
 
@@ -69,7 +81,7 @@
     // Retrieve all Foreign voices
     for (AVSpeechSynthesisVoice *voice in [AVSpeechSynthesisVoice speechVoices]) {
         NSString *language = voice.language;
-        NSRange range = [language rangeOfString:FOREIGN_LANGUAGE];
+        NSRange range = [language rangeOfString:kForeignLanguage];
         if (range.location != NSNotFound) [self.foreignVoices addObject:voice.language];
     }
     
@@ -92,12 +104,12 @@
     
     // Create motion effects
     UIInterpolatingMotionEffect *horizontalMotionEffect = [[UIInterpolatingMotionEffect alloc] initWithKeyPath:@"center.x" type:UIInterpolatingMotionEffectTypeTiltAlongHorizontalAxis];
-    horizontalMotionEffect.minimumRelativeValue = @(MOTION_EFFECT_MIN);
-    horizontalMotionEffect.maximumRelativeValue = @(MOTION_EFFECT_MAX);
+    horizontalMotionEffect.minimumRelativeValue = @(kMotionEffectMin);
+    horizontalMotionEffect.maximumRelativeValue = @(kMotionEffectMax);
     
     UIInterpolatingMotionEffect *verticalMotionEffect = [[UIInterpolatingMotionEffect alloc] initWithKeyPath:@"center.y" type:UIInterpolatingMotionEffectTypeTiltAlongVerticalAxis];
-    verticalMotionEffect.minimumRelativeValue = @(MOTION_EFFECT_MIN);
-    verticalMotionEffect.maximumRelativeValue = @(MOTION_EFFECT_MAX);
+    verticalMotionEffect.minimumRelativeValue = @(kMotionEffectMin);
+    verticalMotionEffect.maximumRelativeValue = @(kMotionEffectMax);
     
     // Apply motion effects
     for (UIView *view in [self.view subviews]) {
@@ -153,16 +165,16 @@
         
         // Speak the text in foreign language
         [utterance setVoice:voice];
-        utterance.volume = FOREIGN_SPEECH_VOLUME;
+        utterance.volume = kForeignSpeechVolume;
         utterance.rate = FOREIGN_SPEECH_RATE;
-        utterance.pitchMultiplier = FORIEGN_SPEECH_PITCH_MULT;
+        utterance.pitchMultiplier = kForeignSpeechPitchMult;
     } else {
         
         // Speak the text in home language
         [utterance setVoice:self.homeVoice];
-        utterance.volume = NATIVE_SPEECH_VOLUME;
+        utterance.volume = kNativeSpeechVolume;
         utterance.rate = NATIVE_SPEECH_RATE;
-        utterance.pitchMultiplier = NATIVE_SPEECH_PITCH_MULT;
+        utterance.pitchMultiplier = kNativeSpeechPitchMult;
     }
     
     [self.synthesizer speakUtterance:utterance];
