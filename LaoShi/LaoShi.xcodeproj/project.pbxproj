@@ -24,6 +24,7 @@
 		1EBE9389191EECE20003D2F4 /* LSSaying.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EBE9386191EECE20003D2F4 /* LSSaying.m */; };
 		1EBE938A191EECE20003D2F4 /* LSSayings.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EBE9388191EECE20003D2F4 /* LSSayings.m */; };
 		1EBE938D191EECF20003D2F4 /* LSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EBE938C191EECF20003D2F4 /* LSAppDelegate.m */; };
+		1EF47B7A1923110200588308 /* Sayings.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1EF47B791923110200588308 /* Sayings.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		1EBE9388191EECE20003D2F4 /* LSSayings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSSayings.m; sourceTree = "<group>"; };
 		1EBE938B191EECF20003D2F4 /* LSAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSAppDelegate.h; sourceTree = "<group>"; };
 		1EBE938C191EECF20003D2F4 /* LSAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSAppDelegate.m; sourceTree = "<group>"; };
+		1EF47B791923110200588308 /* Sayings.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Sayings.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,7 @@
 		1EBE9351191EECC10003D2F4 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1EF47B791923110200588308 /* Sayings.txt */,
 				1EBE9352191EECC10003D2F4 /* LaoShi-Info.plist */,
 				1EBE9353191EECC10003D2F4 /* InfoPlist.strings */,
 				1EBE9356191EECC10003D2F4 /* main.m */,
@@ -242,6 +245,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1EF47B7A1923110200588308 /* Sayings.txt in Resources */,
 				1E3C7D25191EEEA90028044F /* Main_iPhone.storyboard in Resources */,
 				1E3C7D24191EEEA90028044F /* Main_iPad.storyboard in Resources */,
 				1EBE9366191EECC10003D2F4 /* Images.xcassets in Resources */,

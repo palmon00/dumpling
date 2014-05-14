@@ -12,6 +12,7 @@
 #import "LSSaying.h"
 
 NSString * const kForeignLanguage = @"zh";
+float const kSegmentedControlHeight = 40.0;
 
 float const kForeignSpeechVolume = 1.0; // 0.0 to 1.0
 float const kForeignSpeechPitchMult = 1.0; // 0.5 to 2.0
@@ -101,6 +102,9 @@ int const kMotionEffectMax = +10;
     // Swap controls
     [self.localeSegmentedControl removeFromSuperview];
     [self.view addSubview:self.mySegmentedControl];
+    
+    // Increase height of segmented control
+    self.mySegmentedControl.frame = CGRectMake(self.mySegmentedControl.frame.origin.x, self.mySegmentedControl.frame.origin.y, self.mySegmentedControl.frame.size.width, kSegmentedControlHeight);
     
     // Create motion effects
     UIInterpolatingMotionEffect *horizontalMotionEffect = [[UIInterpolatingMotionEffect alloc] initWithKeyPath:@"center.x" type:UIInterpolatingMotionEffectTypeTiltAlongHorizontalAxis];

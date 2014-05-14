@@ -21,24 +21,30 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eyf-qH-yFS">
-                                <rect key="frame" x="20" y="56" width="280" height="204"/>
+                                <rect key="frame" x="20" y="76" width="280" height="180"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="32"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Text for Speech" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eQ2-e8-6H4">
-                                <rect key="frame" x="20" y="28" width="280" height="20"/>
+                                <rect key="frame" x="20" y="28" width="280" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="L0S-HL-fze"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eps-Hi-Gv5">
-                                <rect key="frame" x="20" y="268" width="280" height="32"/>
+                                <rect key="frame" x="20" y="264" width="280" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="VOf-5q-2oq"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <state key="normal" title="Speak!">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -49,7 +55,7 @@
                                 </connections>
                             </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Sgj-Qr-7di">
-                                <rect key="frame" x="20" y="342" width="280" height="29"/>
+                                <rect key="frame" x="20" y="385" width="280" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="First"/>
@@ -57,12 +63,12 @@
                                 </segments>
                                 <color key="tintColor" red="0.0" green="0.50196081400000003" blue="1" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
                             </segmentedControl>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tb9-Xh-g6H">
-                                <rect key="frame" x="20" y="308" width="64" height="26"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="tb9-Xh-g6H">
+                                <rect key="frame" x="20" y="312" width="64" height="65"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="0.0" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
-                                <state key="normal" title=" New ">
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <state key="normal" title=" New Phrase">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -71,10 +77,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i5D-m4-8cN">
-                                <rect key="frame" x="92" y="308" width="64" height="26"/>
+                                <rect key="frame" x="92" y="312" width="64" height="65"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                 <state key="normal" title=" Foreign ">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -84,10 +90,13 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EgJ-8z-Omj">
-                                <rect key="frame" x="164" y="308" width="64" height="26"/>
+                                <rect key="frame" x="164" y="312" width="64" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="Fjy-x9-FnP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                 <state key="normal" title=" Phonetic ">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -97,10 +106,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C5N-Rs-UYa">
-                                <rect key="frame" x="236" y="308" width="64" height="26"/>
+                                <rect key="frame" x="236" y="312" width="64" height="65"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                 <state key="normal" title=" Home ">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -135,10 +144,13 @@
                             <constraint firstItem="Eyf-qH-yFS" firstAttribute="leading" secondItem="eGc-1y-Qza" secondAttribute="leading" constant="20" symbolic="YES" id="djZ-Ld-RwZ"/>
                             <constraint firstItem="C5N-Rs-UYa" firstAttribute="leading" secondItem="EgJ-8z-Omj" secondAttribute="trailing" constant="8" symbolic="YES" id="eoj-kR-pFW"/>
                             <constraint firstItem="Eps-Hi-Gv5" firstAttribute="top" secondItem="Eyf-qH-yFS" secondAttribute="bottom" constant="8" symbolic="YES" id="fjw-6U-GvC"/>
+                            <constraint firstItem="EgJ-8z-Omj" firstAttribute="height" secondItem="i5D-m4-8cN" secondAttribute="height" id="lmE-2X-pSX"/>
+                            <constraint firstItem="EgJ-8z-Omj" firstAttribute="height" secondItem="tb9-Xh-g6H" secondAttribute="height" id="lxo-Lz-bnb"/>
                             <constraint firstItem="eQ2-e8-6H4" firstAttribute="top" secondItem="1Bk-EX-dF4" secondAttribute="bottom" constant="20" symbolic="YES" id="nE8-nG-86K"/>
                             <constraint firstAttribute="trailing" secondItem="Sgj-Qr-7di" secondAttribute="trailing" constant="20" symbolic="YES" id="rRw-OP-bdJ"/>
                             <constraint firstItem="tb9-Xh-g6H" firstAttribute="top" secondItem="Eps-Hi-Gv5" secondAttribute="bottom" constant="8" symbolic="YES" id="wk2-LG-eFW"/>
                             <constraint firstItem="tb9-Xh-g6H" firstAttribute="leading" secondItem="eGc-1y-Qza" secondAttribute="leading" constant="20" symbolic="YES" id="xIU-an-wCx"/>
+                            <constraint firstItem="EgJ-8z-Omj" firstAttribute="height" secondItem="C5N-Rs-UYa" secondAttribute="height" id="yOj-jE-2Zf"/>
                             <constraint firstAttribute="trailing" secondItem="Eyf-qH-yFS" secondAttribute="trailing" constant="20" symbolic="YES" id="zMo-G2-gKC"/>
                             <constraint firstAttribute="trailing" secondItem="8nK-sb-MYG" secondAttribute="trailing" id="zUL-T0-nDB"/>
                         </constraints>
