@@ -22,7 +22,7 @@ float const kNativeSpeechPitchMult = 1.0; // 0.5 to 2.0
 
 #define FOREIGN_SPEECH_RATE AVSpeechUtteranceMinimumSpeechRate // AVSpeechUtteranceMaximumSpeechRate, AVSpeechUtteranceMinimumSpeechRate, AVSpeechUtteranceDefaultSpeechRate
 
-#define NATIVE_SPEECH_RATE (AVSpeechUtteranceDefaultSpeechRate-AVSpeechUtteranceMinimumSpeechRate)/3 // AVSpeechUtteranceMaximumSpeechRate, AVSpeechUtteranceMinimumSpeechRate, AVSpeechUtteranceDefaultSpeechRate
+#define NATIVE_SPEECH_RATE AVSpeechUtteranceMinimumSpeechRate // AVSpeechUtteranceMaximumSpeechRate, AVSpeechUtteranceMinimumSpeechRate, AVSpeechUtteranceDefaultSpeechRate
 
 int const kMotionEffectMin = -10;
 int const kMotionEffectMax = +10;
